@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delta Union Logistics</title>
+  <link rel="icon" type="image/png" href="image/dssd.jpg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Font Awesome (via jsDelivr) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+
+</head>
+<body>
+   <!-- LOADING ANIMATION START -->
+  <div id="site-loader" style="position:fixed;z-index:99999;inset:0;display:flex;align-items:center;justify-content:center;background:#dcf9ff;">
+    <div class="loader-content">
+      <img src="image/tjuj.PNG" alt="Delta Union Logistics" class="loader-logo" />
+      <div class="loader-bar">
+        <div class="loader-bar-inner"></div>
+      </div>
+    </div>
+  </div>
+  <!-- LOADING ANIMATION END -->
+
+  
+  <!-- HEADER -->
+  <header class="header slide-up">
+    <nav class="navbar pinned-navbar">
+      <a href="#" class="logo nav-anim">
+        <img src="image/9х16.png" alt="Delta Union Logistics" width="120" height="36" style="max-width:120px; max-height:36px; object-fit:contain; display:block;" class="logo-img">
+      </a>
+<div class="lang-switcher">
+  <button class="lang-btn" data-lang="uz">UZ</button>
+  <button class="lang-btn" data-lang="en">EN</button>
+</div>
+
+<ul class="nav-links nav-anim" id="nav-links">
+  <li>
+    <a href="#about" class="nav-link" data-uz="Biz haqimizda" data-en="About Us">
+      <span class="nav-icon"><i class="fa-solid fa-building"></i></span>
+      Biz haqimizda
+    </a>
+  </li>
+  <li>
+    <a href="#services" class="nav-link" data-uz="Xizmatlar" data-en="Services">
+      <span class="nav-icon"><i class="fa-solid fa-truck-fast"></i></span>
+      Xizmatlar
+    </a>
+  </li>
+  <li>
+    <a href="#process" class="nav-link" data-uz="Jarayon" data-en="Process">
+      <span class="nav-icon"><i class="fa-solid fa-project-diagram"></i></span>
+      Jarayon
+    </a>
+  </li>
+  <li>
+    <a href="#contact" class="nav-link" data-uz="Aloqa" data-en="Contact">
+      <span class="nav-icon"><i class="fa-solid fa-headset"></i></span>
+      Aloqa
+    </a>
+  </li>
+  <li>
+    <button id="open-calculator" class="modern-btn calculator-btn" data-uz="Kalkulyator" data-en="Calculator">
+      <span class="nav-icon"><i class="fa-solid fa-calculator"></i></span>
+      Kalkulyator
+    </button>
+  </li>
+</ul>
+
+      <div class="header-right">
+        <div class="currency-bar-modern small">
+          <div class="currency-item-modern">
+            <span class="currency-icon"><i class="fa-solid fa-dollar-sign"></i></span>
+            <span class="currency-value" id="usd-rate">12700</span>
+            <span class="currency-unit">UZS</span>
+          </div>
+          <div class="currency-item-modern">
+            <span class="currency-icon"><i class="fa-solid fa-yen-sign"></i></span>
+            <span class="currency-value" id="cny-rate">1750</span>
+            <span class="currency-unit">UZS</span>
+          </div>
+        </div>
+
+        <!-- <select id="lang-select" class="lang-select" aria-label="Tilni tanlang">
+          <option value="uz">UZ</option>
+          <option value="ru">RU</option>
+        </select> -->
+
+        <button class="burger nav-anim" id="burger-menu" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SIDEBAR -->
+  <nav id="sidebar" class="sidebar">
+    <button class="sidebar-close" id="sidebar-close" aria-label="Yopish">
+      <span class="close-animated-icon">
+        <span class="close-line close-line1"></span>
+        <span class="close-line close-line2"></span>
+      </span>
+    </button>
+
+    <ul class="sidebar-links">
+      <li>
+      <a href="#about" class="nav-link" data-uz="Biz haqimizda" data-en="About Us">
+        <span class="nav-icon"><i class="fa-solid fa-building"></i></span> Biz haqimizda
+      </a>
+      </li>
+      <li>
+      <a href="#services" class="nav-link" data-uz="Xizmatlar" data-en="Services">
+        <span class="nav-icon"><i class="fa-solid fa-truck-fast"></i></span> Xizmatlar
+      </a>
+      </li>
+      <li>
+      <a href="#process" class="nav-link" data-uz="Jarayon" data-en="Process">
+        <span class="nav-icon"><i class="fa-solid fa-project-diagram"></i></span> Jarayon
+      </a>
+      </li>
+      <li>
+      <a href="#contact" class="nav-link" data-uz="Aloqa" data-en="Contact">
+        <span class="nav-icon"><i class="fa-solid fa-headset"></i></span> Aloqa
+      </a>
+      </li>
+      <li>
+      <button id="open-calculator-sidebar" class="modern-btn calculator-btn" data-uz="Kalkulyator" data-en="Calculator">
+        <span class="nav-icon"><i class="fa-solid fa-truck-fast"></i></span> Xizmatlar
+      </a>
+      </li>
+      <li>
+      <a href="#process" class="nav-link" data-uz="Jarayon" data-en="Process">
+      
+        <span class="nav-icon"><i class="fa-solid fa-project-diagram"></i></span> Jarayon
+      </a>
+      </li>
+      <li>
+      <a href="#contact" class="nav-link" data-uz="Aloqa" data-en="Contact">
+        <span class="nav-icon"><i class="fa-solid fa-headset"></i></span> Aloqa
+      </a>
+      </li>
+      <li>
+      <button id="open-calculator-sidebar" class="modern-btn calculator-btn" data-uz="Kalkulyator" data-en="Calculator">
+        <span class="nav-icon"><i class="fa-solid fa-calculator"></i></span> Kalkulyator
+      </button>
+      </li>
+    </ul>
+
+
+  </nav>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <main>
+
+<section class="slider-section slide-up">
+  <div class="slider-container">
+    <div class="slider">
+      <img src="image/5.png" class="slide" alt="Port">
+      <img src="image/2.png" class="slide" alt="Ship">
+      <img src="image/3.png" class="slide" alt="Truck">
+      <img src="image/4.png" class="slide" alt="Ship">
+    </div>
+    <button class="slider-btn prev" data-uz="Oldingi" data-ru="Назад"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-btn next" data-uz="Keyingi" data-ru="Вперед"><i class="fas fa-chevron-right"></i></button>
+    <div class="slider-dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+
+<section class="about-modern" id="about">
+  <div class="about-modern-wrapper" id="aboutWrapper">
+    <!-- Heading -->
+    <h1 class="about-modern-heading-main">
+      Delta Union Logistics
+      <span data-uz="Xalqaro logistika va yuklarni tez yetkazib berish" 
+            data-en="International logistics and transportation services">
+        Xalqaro logistika va yuklarni tez yetkazib berish bo‘yicha ishonchli yechimlar
+      </span>
+    </h1>
+
+    <div class="about-modern-flex">
+      <!-- Chap ustun -->
+      <div class="about-modern-left">
+        <!-- Media joyi -->
+        <div class="about-modern-media">
+          <img src="image/hero-logistics.png" 
+               alt="Delta Union Logistics Promo" 
+               style="width:100%;border-radius:16px;object-fit:cover;max-height:320px;">
+        </div>
+
+        <div class="about-modern-content">
+          <!-- Kompaniya haqida -->
+          <h2 class="about-modern-title" data-uz="Kompaniya haqida" data-en="About Company">Kompaniya haqida</h2>
+          <div class="about-modern-desc" 
+               data-uz="Biz Xitoy va dunyoning boshqa mamlakatlari o‘rtasida yuk tashish, bojxona rasmiylashtiruvi, sertifikatlash, konsolidatsiya va ombor xizmatlarini taklif etamiz. Har bir mijozimiz uchun eng qulay va xavfsiz logistika yechimlarini ishlab chiqamiz." 
+               data-en="We offer a wide range of services including international logistics and transportation, including customs clearance, customs declaration, container">
+            <b data-uz="Delta Union Logistics — 2023-yilda tashkil etilgan xalqaro logistika kompaniyasi" 
+               data-en="Delta Union Logistics is an international logistics company established in 2023.">
+              Delta Union Logistics — 2023-yilda tashkil etilgan xalqaro logistika kompaniyasi.
+            </b>
+            Biz Xitoy va dunyoning boshqa mamlakatlari o‘rtasida yuk tashish, bojxona rasmiylashtiruvi, sertifikatlash, konsolidatsiya va ombor xizmatlarini taklif etamiz. Har bir mijozimiz uchun eng qulay va xavfsiz logistika yechimlarini ishlab chiqamiz.
+          </div>
+
+          <!-- Xitoy bilan ishlash -->
+          <div class="about-modern-china" 
+               data-uz="FTL va FCL yo'nalishlari: Agar yukingiz katta hajmda bo‘lsa, biz siz uchun butun fura (FTL) yoki konteynerni (FCL) ajratib beramiz. Bu orqali yuklaringiz boshqa mijozlar bilan aralashmaydi, yo‘l davomida ortiqcha to‘xtashlarsiz tezroq va xavfsizroq yetib keladi. Katta partiya import qiluvchilar uchun eng qulay yechim. LTL va LCL yo'nalishlari: Kichik hajmdagi yuklaringizni boshqa mijozlarning yuklari bilan birlashtirib (konsolidatsiya) O'zbekistonga yetkazib beramiz. Bu yo'nalish orqali transport xarajatlari ancha kamayadi va kichik biznes uchun eng maqbul tanlov bo‘ladi. Yuklaringiz yo‘l davomida muntazam kuzatuv ostida bo‘ladi va belgilangan vaqtda O‘zbekistonga yetkazib beriladi." 
+               data-en="FTL and FCL routes: If your cargo is in large volume, we will allocate a whole truck (FTL) or container (FCL) for you. This way, your cargo will not mix with other customers' cargo, and it will arrive faster and more safely without unnecessary stops along the way. The most convenient solution for large batch importers. LTL and LCL routes: We consolidate your small volume cargo with other customers' cargo and deliver it to Uzbekistan. This route significantly reduces transportation costs and is the most optimal choice for small businesses. Your cargo will be under regular monitoring during the journey and will be delivered to Uzbekistan at the specified time.">
+            <strong>FTL va FCL yo'nalishlari:</strong> Agar yukingiz katta hajmda bo‘lsa, biz siz uchun butun fura (FTL) yoki konteynerni (FCL) ajratib beramiz. Bu orqali yuklaringiz boshqa mijozlar bilan aralashmaydi, yo‘l davomida ortiqcha to‘xtashlarsiz tezroq va xavfsizroq yetib keladi. Katta partiya import qiluvchilar uchun eng qulay yechim. <br><br>
+            <strong>LTL va LCL yo'nalishlari:</strong> Kichik hajmdagi yuklaringizni boshqa mijozlarning yuklari bilan birlashtirib (konsolidatsiya) O'zbekistonga yetkazib beramiz. Bu yo'nalish orqali transport xarajatlari ancha kamayadi va kichik biznes uchun eng maqbul tanlov bo‘ladi. Yuklaringiz yo‘l davomida muntazam kuzatuv ostida bo‘ladi va belgilangan vaqtda O‘zbekistonga yetkazib beriladi.
+          </div>
+
+          <!-- Transport yo‘nalishlari -->
+          <h3 class="about-modern-subtitle" data-uz="Transport yo‘nalishlari" data-en="Modern transport modes">Transport yo‘nalishlari</h3>
+          <ul>
+            <li data-uz="Avto — furalar orqali moslashuvchan marshrutlarda yuk tashishni ta’minlaymiz." data-en="We provide cargo transportation on flexible routes using trucks."><i class="fas fa-car"></i> Avto — furalar orqali moslashuvchan marshrutlarda yuk tashishni ta’minlaymiz.</li>
+            <li data-uz="Avia — yuklarni eng qisqa muddatda yetkazib berish zarur bo‘lganda eng yaxshi tanlov." data-en="Air is the best choice when you need to deliver cargo in the shortest possible time."><i class="fas fa-plane"></i> Avia — yuklarni eng qisqa muddatda yetkazib berish zarur bo‘lganda eng yaxshi tanlov.</li>
+            <li data-uz="Temir yo‘l - narx va jadval muvozanatini ta’minlaydigan, katta hajmdagi yuklar uchun qulay transport turi." data-en="Railway is a convenient mode of transport for large-sized cargo, providing a balance between price and schedule."><i class="fas fa-truck"></i> Temir yo‘l — narx va jadval muvozanatini ta’minlaydigan, katta hajmdagi yuklar uchun qulay transport turi.</li>
+          </ul>
+
+          <!-- Transport xaritasi -->
+          <div class="about-modern-media sm">
+            <img src="image/transprt-map.png" alt="Transport xaritasi" style="width:100%;border-radius:12px;object-fit:cover;max-height:280px;">
+          </div>
+
+          <!-- Xizmatlar -->
+          <ul class="about-modern-list">
+            <li data-uz="Har bir mijoz uchun professional maslahat va individual tariflarni ishlab chiqamiz." data-en="We provide professional services to each customer and individual pricing."> Har bir mijoz uchun professional maslahat va individual tariflarni ishlab chiqamiz.</li>
+            <li data-uz="Ombor va yuklarni saqlash xizmatlarini taqdim etamiz." data-en="We provide storage services for cargo and ships."> Ombor va yuklarni saqlash xizmatlarini taqdim etamiz.</li>
+            <li data-uz="Barcha bojxona jarayonlarini va hujjatlarni to‘liq rasmiylashtiramiz." data-en="We fully formalize all customs procedures and documents."> Barcha bojxona jarayonlarini va hujjatlarni to‘liq rasmiylashtiramiz.</li>
+            <li data-uz="Yuklarni tez, xavfsiz va belgilangan muddatda yetkazib beramiz." data-en="We deliver cargo quickly, safely, and on time."> Yuklarni tez, xavfsiz va belgilangan muddatda yetkazib beramiz.</li>
+            <li data-uz="Yuklarni real vaqt rejimida kuzatish imkoniyatini ta’minlaymiz." data-en="We provide real-time tracking services for cargo.">Yuklarni real vaqt rejimida kuzatish imkoniyatini ta’minlaymiz.</li>
+          </ul>
+
+          <!-- Yondashuv -->
+          <div class="about-modern-note" 
+               data-uz="Biz zamonaviy texnologiyalar, ishonchli hamkorlar va tajribali mutaxassislar jamoasi bilan har bir mijozga individual yondashuvni ta’minlaymiz." 
+               data-en="We provide an individual approach to each client with modern technologies, reliable partners, and a team of experienced specialists.">
+            Biz zamonaviy texnologiyalar, ishonchli hamkorlar va tajribali mutaxassislar jamoasi bilan har bir mijozga individual yondashuvni ta’minlaymiz.
+          </div>
+
+          <!-- Nega aynan biz -->
+          <div class="about-modern-why">
+            <span class="about-modern-why-title" data-uz="Nega aynan biz?" data-en="Why us?">Nega aynan biz?</span>
+            <ul>
+              <li data-uz="Xitoydagi omborlardan yuklaringizni ehtiyotkorlik bilan ortib, to'liq nazorat ostida yo‘lga chiqaramiz." data-en="Transporting your cargo from the ports of Xitoy to the destination is convenient for you."> Xitoydagi omborlardan yuklaringizni ehtiyotkorlik bilan ortib, to‘liq nazorat ostida yo‘lga chiqaramiz.</li> 
+              <li data-uz="Transportning har bir bosqichi — yuk mashinasi, samolyot yoki poyezd — bizning kuzatuvimizda bo‘ladi." data-en="Every step of the journey — truck, plane, or train — is in our control."> Transportning har bir bosqichi — yuk mashinasi, samolyot yoki poyezd — bizning kuzatuvimizda bo‘ladi.</li>
+              <li data-uz="Yo'l davomida yuklaringizni onlayn kuzatish imkoniyatini taqdim etamiz." data-en="We offer the ability to track your shipments online throughout the journey.">Yo‘l davomida yuklaringizni onlayn kuzatish imkoniyatini taqdim etamiz.</li>
+              <li data-uz="O'zbekistonga yuklaringizni tez va xavfsiz qo‘lingizga topshiramiz." data-en="We deliver your cargo to Uzbekistan quickly and safely."> O‘zbekistonga yetib kelgach, yuklaringizni tez va xavfsiz qo‘lingizga topshiramiz.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- O‘ng ustun -->
+      <div class="about-modern-right">
+        <div class="about-modern-stats">
+          <div class="about-modern-stat-card">
+            <div class="stat-main">10+</div>
+            <div class="stat-desc" data-uz="yirik loyhalarni muvaffaqiyatli amalga oshirdik <br><span>(yiliga)</span>" data-en="we successfully implemented a major project ">biz yirik loyihani muvaffaqiyatli amalga oshirdik <br><span data-uz="(yiliga)" data-en="(per year)">(yiliga)</span></div>
+          </div>
+          <div class="about-modern-stat-card">
+            <div class="stat-main">12 000 <span data-uz="tonna/yiliga" data-en="tonna/year">tonna/yiliga</span></div>
+            <div class="stat-desc" data-uz="yuk aylanmasini ta’minlaymiz" data-en="we provide cargo turnover.">yuk aylanmasini ta’minlaymiz</div>
+          </div>
+          <div class="about-modern-stat-card">
+            <div class="stat-main">200+</div>
+            <div class="stat-desc" data-uz="dunyo bo'ylab ishonchli yetkazib beruvchilar bilan hamkorlik qilamiz" data-en="We cooperate with reliable suppliers around the world">dunyo bo‘ylab ishonchli yetkazib beruvchilar bilan hamkorlik qilamiz</div>
+          </div>
+        </div>
+
+        <div class="about-modern-right-info-cards">
+          <div class="about-modern-right-info-card">
+            <h4 data-uz="Xitoy bilan ishlash" data-en="Working with China">Xitoy bilan ishlash</h4>
+            <p data-uz="Bizning konsolidatsiya markazlarimiz Guangzhou, Yiwu, Shenzhen va boshqa yirik savdo shaharlarida joylashgan. Kichik partiyadan tortib to to‘liq konteynergacha bo‘lgan yuklarni qabul qilamiz va yetkazamiz." data-en="Our consolidation centers are located in Guangzhou, Yiwu, Shenzhen and other major trading cities. We accept and deliver cargoes ranging from small batches to full containers.">Bizning konsolidatsiya markazlarimiz Guangzhou, Yiwu, Shenzhen va boshqa yirik savdo shaharlarida joylashgan. Kichik partiyadan tortib to to‘liq konteynergacha bo‘lgan yuklarni qabul qilamiz va yetkazamiz.</p>
+            <img src="image/china-centers.jpg" alt="Xitoy konsolidatsiya markazlari" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;margin-top:8px;">
+          </div>
+          <div class="about-modern-right-info-card">
+            <h4 data-uz="Transport variantlari" data-en="Transport modes">Transport variantlari</h4>
+            <p data-uz="Biz avto, avia va temir yo‘l transport turlaridan foydalanib, har bir mijoz uchun eng qulay yetkazib berish usulini tanlaymiz." data-en="We use road, air, and rail transport to choose the most convenient delivery method for each client.">Biz avto, avia va temir yo‘l transport turlaridan foydalanib, har bir mijoz uchun eng qulay yetkazib berish usulini tanlaymiz.</p>
+            <img src="image/transport-modes.jpg" alt="Transport variantlari" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;margin-top:8px;">
+          </div>
+          <div class="about-modern-right-info-card">
+            <h4 data-uz="Onlayn kuzatuv" data-en="Online tracking">Onlayn kuzatuv</h4>
+            <p data-uz="Yuklariningizni real vaqt rejimida kuzatish imkonini beruvchi onlayn platformamaiz orqali yuk holati va yetkazib berish berish jarayonidan xabardor bo‘lib turasiz. Bildirishnomalar va holat yangilanishlari avtomatik tarzda yuboriladi." data-en="You will be kept informed of the status of your shipment and delivery progress through our online platform, which allows you to track your shipments in real time. Notifications and status updates are sent automatically.">Yuklaringizni real vaqt rejimida kuzatish imkonini beruvchi onlayn platformamiz orqali yuk holati va yetkazib berish jarayonidan xabardor bo‘lib turasiz. Bildirishnomalar va holat yangilanishlari avtomatik tarzda yuboriladi.</p>
+            <img src="image/online-tracking.jpg" alt="Onlayn kuzatuv" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;margin-top:8px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Services Section -->
+<section class="services slide-up" id="services">
+  <div class="container">
+    <h2 class="services-title" data-uz="Xizmatlarimiz" data-en="Services">Xizmatlarimiz</h2>
+    <div class="services-grid">
+      <div class="service-card" data-service="auto"
+        data-uz-title="Avto transporti"
+        data-en-title="Road Transport"
+        data-uz-desc="Xitoydan O‘zbekistonga avtomobil orqali yuklarni tez yetkazib berish."
+        data-en-desc="Fast delivery of goods by road from China to Uzbekistan."
+      >
+        <div class="service-icon"><i class="fas fa-truck"></i></div>
+        <h3 data-uz="Avto transporti" data-en="Road Transport">Avto transporti</h3>
+        <p data-uz="Xitoydan O‘zbekistonga avtomobil orqali yuklarni tez yetkazib berish."
+           data-en="Fast delivery of goods by road from China to Uzbekistan.">
+           Xitoydan O‘zbekistonga avtomobil orqali yuklarni tez yetkazib berish.
+        </p>
+        <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="rail"
+        data-uz-title="Temir yo‘l transporti"
+        data-en-title="Rail Transport"
+        data-uz-desc="Temir yo‘l orqali yuklarni tejamkor va ishonchli tashish."
+        data-en-desc="Economical and reliable transportation of goods by rail."
+      >
+        <div class="service-icon"><i class="fas fa-train"></i></div>
+        <h3 data-uz="Temir yo‘l transporti" data-en="Rail Transport">Temir yo‘l transporti</h3>
+        <p data-uz="Temir yo‘l orqali yuklarni tejamkor va ishonchli tashish."
+           data-en="Economical and reliable transportation of goods by rail.">
+           Temir yo‘l orqali yuklarni tejamkor va ishonchli tashish.
+        </p>
+        <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="air"
+        data-uz-title="Havo transporti"
+        data-en-title="Air Transport"
+        data-uz-desc="Tovarlarni havo orqali eng tez yetkazib berish."
+        data-en-desc="The fastest delivery of goods by air."
+      >
+        <div class="service-icon"><i class="fas fa-plane"></i></div>
+        <h3 data-uz="Havo transporti" data-en="Air Transport">Havo transporti</h3>
+        <p data-uz="Tovarlarni havo orqali eng tez yetkazib berish."
+           data-en="The fastest delivery of goods by air.">
+           Tovarlarni havo orqali eng tez yetkazib berish.
+        </p>
+        <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="declaration"
+        data-uz-title="Deklaratsiya xizmatlari"
+        data-en-title="Customs Declaration"
+        data-uz-desc="Barcha bojxona hujjatlarini professional tarzda rasmiylashtirish."
+        data-en-desc="Professional preparation of all customs documents."
+      >
+        <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+        <h3 data-uz="Deklaratsiya xizmatlari" data-en="Customs Declaration">Deklaratsiya xizmatlari</h3>
+        <p data-uz="Barcha bojxona hujjatlarini professional tarzda rasmiylashtirish."
+           data-en="Professional preparation of all customs documents.">
+           Barcha bojxona hujjatlarini professional tarzda rasmiylashtirish.
+        </p>
+        <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="warehouse"
+        data-uz-title="Omborlar"
+        data-en-title="Warehouses"
+        data-uz-desc="Yiwu shahridagi zamonaviy omborxona."
+        data-en-desc="Modern warehouse in Yiwu city."
+      >
+        <div class="service-icon"><i class="fas fa-warehouse"></i></div>
+        <h3 data-uz="Omborlar" data-en="Warehouses">Omborlar</h3>
+        <p data-uz="Yiwu shahridagi zamonaviy omborxona."
+           data-en="Modern warehouse in Yiwu city.">
+           Yiwu shahridagi zamonaviy omborxona.
+        </p>
+        <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <img id="modalImg" src="" alt="Service Image">
+    <p id="modalDesc"></p>
+    <ul id="modalDetails"></ul>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal oynasi -->
+<div id="service-modal" class="service-modal">
+  <div class="service-modal-content">
+    <button class="service-modal-close" id="service-modal-close" >&times;</button>
+    <div id="service-modal-body"></div>
+  </div>
+</div>
+<br><br><br>
+
+<section class="partners-section">
+  <div class="container">
+    <h2 class="partners-title" data-uz="Bizning mijozlar va hamkorlar" data-en="Our clients and partners">
+      Bizning mijozlar va hamkorlar
+    </h2>
+    <div class="partners-carousel-wrapper">
+      <div class="partners-carousel">
+        <!-- ====== 1-to‘plam logolar ====== -->
+        <div class="partner-logo"><img src="image/soyuzsnab.png" alt="Soyuzsnab"></div>
+        <div class="partner-logo"><img src="image/ricomel.png" alt="Ricomel"></div>
+        <div class="partner-logo"><img src="image/tanho.png" alt="Tanho"></div>
+        <div class="partner-logo"><img src="image/newmoon.png" alt="Newmoon"></div>
+        <div class="partner-logo"><img src="image/cardion.png" alt="Cardion"></div>
+        <div class="partner-logo"><img src="image/pepsi_732236.png" alt="Pepsi"></div>
+        <div class="partner-logo"><img src="image/coca-cola-seeklogo.png" alt="Coca-Cola"></div>
+        <div class="partner-logo"><img src="image/miobeauty.png" alt="Moi beauty"></div>
+
+        <!-- ====== 2-to‘plam logolar (takror) ====== -->
+        <div class="partner-logo"><img src="image/soyuzsnab.png" alt="Soyuzsnab"></div>
+        <div class="partner-logo"><img src="image/ricomel.png" alt="Ricomel"></div>
+        <div class="partner-logo"><img src="image/tanho.png" alt="Tanho"></div>
+        <div class="partner-logo"><img src="image/newmoon.png" alt="Newmoon"></div>
+        <div class="partner-logo"><img src="image/cardion.png" alt="Cardion"></div>
+        <div class="partner-logo"><img src="image/pepsi_732236.png" alt="Pepsi"></div>
+        <div class="partner-logo"><img src="image/coca-cola-seeklogo.png" alt="Coca-Cola"></div>
+        <div class="partner-logo"> <img src="image/miobeauty.png" alt="Moi beauty"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Afzalliklar bo‘limi -->
+<section class="advantages" id="process">
+  <h2 class="advantages-title" data-uz="Bizning afzalliklarimiz" data-en="Our advantages"">Bizning afzalliklarimiz</h2>
+  <p class="advantages-subtitle" data-uz="Biz sizga tanlovda yordam beramiz" data-en="We will help you with the choice.">Biz sizga tanlovda yordam beramiz</p>
+
+  <div class="advantages-container">
+    <div class="advantages-left">
+      <img src="image/pngwing.com.png" alt="Yuk tashish" />
+    </div>
+
+    <div class="advantages-right">
+      <div class="advantage-item">
+        <i class="fas fa-route"></i>
+        <div>
+          <h3 data-uz="Aniq tuzilgan bosqichma-bosqich transport marshruti" data-en="A clearly structured step-by-step transport route">Aniq tuzilgan bosqichma-bosqich transport marshruti</h3>
+          <p data-uz="Maxsus jadvallar asosida yuklaringiz har doim o‘z vaqtida yetib keladi." data-en="Based on special schedules, your cargo will always arrive on time.">Maxsus jadvallar asosida yuklaringiz har doim o‘z vaqtida yetib keladi.</p>
+        </div>
+      </div>
+
+      <div class="advantage-item">
+        <i class="fas fa-sliders-h"></i>
+        <div>
+          <h3 data-uz="Yuk tashish yo‘nalishini sozlash uchun moslashuvchan tizim" data-en="A flexible and reliable transport route planning system">Yuk tashish yo‘nalishini sozlash uchun moslashuvchan tizim</h3>
+          <p data-uz="Sizda yuk tashish yo'nalishni va eng tejamkor marshrutni tanlash imkoni mavjud." data-en="You have the opportunity to choose the direction of transportation and the most economical route.">Sizda yuk tashish yo‘nalishini va eng tejamkor marshrutni tanlash imkoni mavjud.</p>
+        </div>
+      </div>
+
+      <div class="advantage-item">
+        <i class="fas fa-shield-alt"></i>
+        <div>
+          <h3 data-uz="Yuklar aslidek va xavfsiz yetib keladi" data-en="The goods arrive intact and safe.">Yuklar aslidek va xavfsiz yetib keladi</h3>
+          <p data-uz="Yukingiz xavfsizligi uchun ishonchli va xavfsiz tashish usullaridan foydalaniladi." data-en="Reliable and safe transportation methods are used to ensure the safety of your cargo.">Yukingiz xavfsizligi uchun ishonchli va xavfsiz tashish usullaridan foydalaniladi.</p>
+        </div>
+      </div>
+
+      <div class="advantage-item">
+        <i class="fas fa-eye"></i>
+        <div>
+          <h3 data-uz="Yukingizni real vaqt rejimida kuzatib borish imkoniyati" data-en="Real-time tracking of your cargo is available.">Yukingizni real vaqt rejimida kuzatib borish imkoniyati</h3>
+          <p data-uz="Xodimlarimiz yukingizni bosqichlarda doimiy kuzatib boradi." data-en="Our staff will constantly monitor your cargo at all stages.">Xodimlarimiz yukingizni barcha bosqichlarda doimiy kuzatib boradi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="map-section slide-up" id="map">
+  <div class="container map-container">
+    <h2 class="map-title" data-uz="Bizning manzil" data-en="Our address">
+      <i class="fa-solid fa-location-dot"></i> Bizning manzil
+    </h2>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1059.3138771218983!2d69.30479010700961!3d41.32643588289424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef50059979757%3A0x136cc041dca88b2f!2sDelta%20Union%20Logistics!5e0!3m2!1sru!2s!4v1755522371044!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="map-address">
+      <i class="fa-solid fa-map-pin"></i>
+      <span data-uz="Toshkent shahar M.Ulug'bek tumani Oqqo‘rg‘on ko‘chasi, 18-uy" data-en="18, Oqkurgan Street, M.Ulugbek District, Tashkent City">Toshkent shahar M.Ulug'bek tumani Oqqo‘rg‘on ko‘chasi, 18-uy</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact slide-up" id="contact">
+  <div class="container contact-container-custom">
+    <h2 class="contact-title-custom" data-uz="Aloqa" data-en="Contact"><i class="fas fa-headset"></i> Aloqa</h2>
+    <div class="contact-card-grid">
+      <div class="contact-card">
+        <div class="contact-card-icon phone"><i class="fas fa-phone-alt"></i></div>
+        <div class="contact-card-content">
+          <div class="contact-card-label" data-uz="Telefon raqamlarimiz" data-en="Phone numbers">Telefon raqamlarimiz</div>
+          <a href="tel:+998977064580" class="contact-card-link">+998 97 706 45 80</a>
+          <a href="tel:+998991032222" class="contact-card-link">+998 99 103 22 22</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon instagram"><i class="fab fa-instagram"></i></div>
+        <div class="contact-card-content">
+          <div class="contact-card-label" data-uz="Instagram" data-en="Instagram"">Instagram</div>
+          <a href="https://www.instagram.com/deltaunionsolutions?igsh=amRicnd6c3Jvanhv" class="contact-card-link" target="_blank">@deltaunionlogistics</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon telegram"><i class="fab fa-telegram-plane"></i></div>
+        <div class="contact-card-content">
+          <div class="contact-card-label" data-uz="Telegram kanal" data-en="Telegram channel"">Telegram kanal</div>
+          <a href="https://t.me/deltaunionlogistics" class="contact-card-link" target="_blank">t.me/deltaunionlogistics</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-desc-custom" data-uz="Savollar bo‘yicha bizga istalgan vaqtda murojaat qilishingiz mumkin!" data-en="You can contact us at any time with questions!">
+      <i class="fas fa-info-circle"></i> Savollar bo‘yicha bizga istalgan vaqtda murojaat qilishingiz mumkin!
+    </div>
+  </div>
+</section>
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title" data-uz="Bizning jamoa" data-en="Our team">Bizning jamoa</h2>
+    <p class="section-subtitle" data-uz="Bizning muvaffaqiyatimiz — jamoamizning kuchida!" data-en="Our success lies in the strength of our team!">Bizning muvaffaqiyatimiz — jamoamizning kuchida!</p>
+
+    <div class="team-container">
+      <!-- CEO -->
+      <div class="ceo">
+        <div class="card">
+          <img src="xodimlar images/ceo.jpg" alt="CEO">
+          <h3>Mirraximov Dilmurod</h3>
+          <p>CEO of logistics</p>
+        </div>
+      </div>
+
+      <!-- Animatsiya qismi -->
+      <div class="b-slider">
+        <div class="slider-track">
+          <!-- 3 ta manager -->
+          <div class="card">
+            <img src="xodimlar images/1.png" alt="">
+            <h3>Hushboqov Habibullo</h3>
+            <p>Manager of logistics</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/2.jpg" alt="">
+            <h3>Orifjonov Ramziddin</h3>
+            <p>Manager of logistics</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/3.png" alt="">
+            <h3>Akbarov Abdulloh</h3>
+            <p>Manager of logistics</p>
+          </div>
+
+          <!-- 3 ta qo'llab-quvvatlovchi -->
+          <div class="card">
+            <img src="xodimlar images/4.png" alt="">
+            <h3>Rahmonova Mashxura</h3>
+            <p>Accountant</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/5.png" alt="">
+            <h3>O'razaliyeva Mohidil</h3>
+            <p>Call operator</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/bob.png" alt="">
+            <h3>Ilashev Boburjon</h3>
+            <p>SMM manager</p>
+          </div>
+          <!-- 3 ta boshqa manager -->
+          <div class="card">
+            <img src="xodimlar images/7.png" alt="">
+            <h3>Maxmudov Sanjarbek</h3>
+            <p>Manager of logistics</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/8.jpg" alt="">
+            <h3>Sunnatov Saidakbar</h3>
+            <p>Manager of logistics</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/9.png" alt="">
+            <h3>Abdullayev Asatilla</h3>
+            <p>Manager of logistics</p>
+          </div>
+
+          <!-- Qayta yozib cheksiz oqim uchun -->
+          <div class="card">
+            <img src="xodimlar images/1.png" alt="">
+            <h3>Hushboqov Habibullo</h3>
+            <p>Manager of logistics</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/2.jpg" alt="">
+            <h3>Orifjonov Ramziddin</h3>
+            <p>Manager of logistics</p>
+          </div>
+          <div class="card">
+            <img src="xodimlar images/3.png" alt="">
+            <h3>Akbarov Abdulloh</h3>
+            <p>Manager of logistics</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section style="display: flex; justify-content: center; align-items: center; padding: 40px;">
+  <div class="order-form">
+    <form id="orderForm">
+      <label data-uz="Yukingiz kubi hajmi qancha? (Kub metrda)"  data-en="What is the weight of your package? (in cubic meters)">Yukingiz kub hajmi qancha? (Kub metrda)</label>
+      <input type="number" step="0.01" name="kubi" placeholder="1.5 m³" required>
+
+      <label data-uz="Yukingiz og‘irligi qancha? (Kg)"  data-en="What is the weight of your package? (kg)">Yukingiz og‘irligi qancha? (Kg)</label>
+      <input type="number" name="ogirlik" placeholder="2000 kg" required>
+
+      <label data-uz="Ism" data-en="Name">Ism</label>
+      <input type="text" name="ism" placeholder="John" data-uz-placeholder="Ismingiz" data-en-placeholder="Name" required>
+
+      <label data-uz="Telefon raqami" data-en="Phone number">Telefon raqami</label>
+      <input type="text" name="telefon" placeholder="+998 xx xxx xx xx" required>
+
+      <button type="submit" data-uz="Yuborish" data-en="Send">Yuborish</button>
+    </form>
+  </div>
+</section>
+
+  </main>
+
+ <footer>
+  <div class="container">
+    <p data-uz="&copy; 2025 Delta Union Logistics. Barcha huquqlar himoyalangan." data-en="&copy; 2025 Delta Union Logistics. All rights reserved.">
+      &copy; 2025 Delta Union Logistics. Barcha huquqlar himoyalangan.
+    </p>
+  </div>
+</footer>
+
+<!-- ...existing code... -->
+<!-- Footer va script.js dan oldin joylashtiring -->
+<div id="calculator-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;">
+  <div class="calculator-modal-content">
+    <button id="close-calculator" class="calculator-modal-close">&times;</button>
+    <div class="calculator">
+      <h2 data-uz="Yagona Yuk Kalkulyator" data-en="Unified freight calculator">Yagona Yuk Kalkulyator</h2>
+      
+      <div class="form-group modern-form-group">
+        <label for="weight" data-uz="Yuk og‘irligi (kg):" data-en="Weight of cargo (kg):">Yuk og‘irligi (kg):</label>
+        <input type="number" id="weight" placeholder="1000" data-uz-placeholder="1000" data-ru-placeholder="1000" />
+      </div>
+      <div class="form-group modern-form-group">
+        <label for="volume" class="modern-label" data-uz="Yuk hajmi (kub):" data-en="Volume (m³):">Yuk hajmi (kub):</label>
+        <input type="number" step="0.01" id="volume" class="modern-input" placeholder="Masalan: 5.5" data-uz-placeholder="Masalan: 5.5" data-en-placeholder="E.g., 5.5" />
+      </div>
+      <div class="form-group modern-form-group">
+        <label for="packing" class="modern-label" data-uz="Qadoqlash turi:" data-en="Packing type:">Qadoqlash turi:</label>
+        <select id="packing" class="modern-select">
+          <option value="wood" data-uz="Yog‘och quti" data-en="Wooden case">Wooden Case</option>
+          <option value="paper" data-uz="Karton quti" data-en="Carton box">Carton Box</option>
+        </select>
+      </div>
+      <button class="modern-btn modern-btn-primary" onclick="calculateBestPrice()" data-uz="Hisoblash" data-en="Calculate">Hisoblash</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+  <script>
+    // Hide loader after page load
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('site-loader');
+      if (loader) loader.style.display = 'none';
+    });
+  </script>
+  <script src="lang-switch.js"></script>
+</body>
+</html>
