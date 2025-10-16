@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="Z8Inv_e8VQIL515kFrPXinxsg_KHXsrKA7yNu4w9Rbk" />
   <title>Delta Union Logistics</title>
   <link rel="icon" type="image/png" href="image/dssd.jpg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -96,83 +97,110 @@
   </header>
 
   <!-- SIDEBAR -->
-  <nav id="sidebar" class="sidebar">
-    <button class="sidebar-close" id="sidebar-close" aria-label="Yopish">
-      <span class="close-animated-icon">
-        <span class="close-line close-line1"></span>
-        <span class="close-line close-line2"></span>
-      </span>
-    </button>
+<nav id="sidebar" class="sidebar">
+  <button class="sidebar-close" id="sidebar-close" aria-label="Yopish">
+    <span class="close-animated-icon">
+      <span class="close-line close-line1"></span>
+      <span class="close-line close-line2"></span>
+    </span>
+  </button>
 
-    <ul class="sidebar-links">
-      <li>
+  <ul class="sidebar-links">
+    <li>
       <a href="#about" class="nav-link" data-uz="Biz haqimizda" data-en="About Us">
-        <span class="nav-icon"><i class="fa-solid fa-building"></i></span> Biz haqimizda
+        <span class="nav-icon"><i class="fa-solid fa-building"></i></span>
+        <span class="nav-text">Biz haqimizda</span>
       </a>
-      </li>
-      <li>
+    </li>
+    <li>
       <a href="#services" class="nav-link" data-uz="Xizmatlar" data-en="Services">
-        <span class="nav-icon"><i class="fa-solid fa-truck-fast"></i></span> Xizmatlar
+        <span class="nav-icon"><i class="fa-solid fa-truck-fast"></i></span>
+        <span class="nav-text">Xizmatlar</span>
       </a>
-      </li>
-      <li>
+    </li>
+    <li>
       <a href="#process" class="nav-link" data-uz="Jarayon" data-en="Process">
-        <span class="nav-icon"><i class="fa-solid fa-project-diagram"></i></span> Jarayon
+        <span class="nav-icon"><i class="fa-solid fa-project-diagram"></i></span>
+        <span class="nav-text">Jarayon</span>
       </a>
-      </li>
-      <li>
+    </li>
+    <li>
       <a href="#contact" class="nav-link" data-uz="Aloqa" data-en="Contact">
-        <span class="nav-icon"><i class="fa-solid fa-headset"></i></span> Aloqa
+        <span class="nav-icon"><i class="fa-solid fa-headset"></i></span>
+        <span class="nav-text">Aloqa</span>
       </a>
-      </li>
-      <li>
+    </li>
+    <li>
       <button id="open-calculator-sidebar" class="modern-btn calculator-btn" data-uz="Kalkulyator" data-en="Calculator">
-        <span class="nav-icon"><i class="fa-solid fa-truck-fast"></i></span> Xizmatlar
-      </a>
-      </li>
-      <li>
-      <a href="#process" class="nav-link" data-uz="Jarayon" data-en="Process">
-      
-        <span class="nav-icon"><i class="fa-solid fa-project-diagram"></i></span> Jarayon
-      </a>
-      </li>
-      <li>
-      <a href="#contact" class="nav-link" data-uz="Aloqa" data-en="Contact">
-        <span class="nav-icon"><i class="fa-solid fa-headset"></i></span> Aloqa
-      </a>
-      </li>
-      <li>
-      <button id="open-calculator-sidebar" class="modern-btn calculator-btn" data-uz="Kalkulyator" data-en="Calculator">
-        <span class="nav-icon"><i class="fa-solid fa-calculator"></i></span> Kalkulyator
+        <span class="nav-icon"><i class="fa-solid fa-calculator"></i></span>
+        <span class="nav-text">Kalkulyator</span>
       </button>
-      </li>
-    </ul>
+    </li>
+  </ul>
 
+  <div class="sidebar-lang">
+    <!-- bu yerga til tanlash tugmalari qo‘yilsa bo‘ladi -->
+  </div>
+</nav>
 
-  </nav>
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
 
-  <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
   <main>
 
 <section class="slider-section slide-up">
   <div class="slider-container">
     <div class="slider">
-      <img src="image/5.png" class="slide" alt="Port">
-      <img src="image/2.png" class="slide" alt="Ship">
-      <img src="image/3.png" class="slide" alt="Truck">
-      <img src="image/4.png" class="slide" alt="Ship">
+      <div class="slide active">
+        <img src="image/5.png" alt="Port">
+        <div class="slide-text" 
+             data-uz="Xitoydan ishonchli yuk tashish xizmati" 
+             data-ru="Надежные грузоперевозки из Китая"
+             data-en="Reliable cargo transportation from China">
+        </div>
+      </div>
+      <div class="slide">
+        <img src="image/2.png" alt="Ship">
+        <div class="slide-text" 
+             data-uz="Avto transport xizmati" 
+             data-ru="Автотранспортные услуги"
+             data-en="Road transport service">
+        </div>
+      </div>
+      <div class="slide">
+        <img src="image/3.png" alt="Truck">
+        <div class="slide-text" 
+             data-uz="Havo transport xizmati" 
+             data-ru="Авиационные перевозки"
+             data-en="Air transport service">
+        </div>
+      </div>
+      <div class="slide">
+        <img src="image/4.png" alt="Rail">
+        <div class="slide-text" 
+             data-uz="Temir yo’l transport xizmati" 
+             data-ru="Железнодорожные перевозки"
+             data-en="Rail transport service">
+        </div>
+      </div>
     </div>
-    <button class="slider-btn prev" data-uz="Oldingi" data-ru="Назад"><i class="fas fa-chevron-left"></i></button>
-    <button class="slider-btn next" data-uz="Keyingi" data-ru="Вперед"><i class="fas fa-chevron-right"></i></button>
+
+    <button class="slider-btn prev" data-uz="Oldingi" data-ru="Назад" data-en="Previous">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="slider-btn next" data-uz="Keyingi" data-ru="Вперед" data-en="Next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
     <div class="slider-dots">
-      <span class="dot"></span>
+      <span class="dot active"></span>
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
   </div>
 </section>
+
 
 
 <section class="about-modern" id="about">
@@ -292,6 +320,7 @@
             <p data-uz="Yuklariningizni real vaqt rejimida kuzatish imkonini beruvchi onlayn platformamaiz orqali yuk holati va yetkazib berish berish jarayonidan xabardor bo‘lib turasiz. Bildirishnomalar va holat yangilanishlari avtomatik tarzda yuboriladi." data-en="You will be kept informed of the status of your shipment and delivery progress through our online platform, which allows you to track your shipments in real time. Notifications and status updates are sent automatically.">Yuklaringizni real vaqt rejimida kuzatish imkonini beruvchi onlayn platformamiz orqali yuk holati va yetkazib berish jarayonidan xabardor bo‘lib turasiz. Bildirishnomalar va holat yangilanishlari avtomatik tarzda yuboriladi.</p>
             <img src="image/online-tracking.jpg" alt="Onlayn kuzatuv" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;margin-top:8px;">
           </div>
+          
         </div>
       </div>
     </div>
@@ -673,7 +702,7 @@
       </div>
       <div class="form-group modern-form-group">
         <label for="volume" class="modern-label" data-uz="Yuk hajmi (kub):" data-en="Volume (m³):">Yuk hajmi (kub):</label>
-        <input type="number" step="0.01" id="volume" class="modern-input" placeholder="Masalan: 5.5" data-uz-placeholder="Masalan: 5.5" data-en-placeholder="E.g., 5.5" />
+        <input type="number" step="0.01" id="volume" class="modern-input" placeholder="5.5 m³" data-uz-placeholder="Masalan: 5.5" data-en-placeholder="E.g., 5.5" />
       </div>
       <div class="form-group modern-form-group">
         <label for="packing" class="modern-label" data-uz="Qadoqlash turi:" data-en="Packing type:">Qadoqlash turi:</label>

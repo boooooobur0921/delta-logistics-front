@@ -123,6 +123,7 @@ a {
   padding: 4px 10px;
   font-size: 0.97rem;
   box-shadow: 0 2px 8px rgba(21, 190, 196, 0.08);
+  flex-wrap: nowrap; /* yonma-yon qoladi */
 }
 .currency-item-modern {
   display: flex;
@@ -155,11 +156,50 @@ a {
   outline: none;
   cursor: pointer;
   transition: border 0.2s, box-shadow 0.2s;
+  white-space: nowrap; /* matn qator buzilmaydi */
 }
 .lang-select:focus {
   border: 1.5px solid #0db2c4;
   box-shadow: 0 0 6px #0db2c47a;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .currency-bar-modern.small {
+    gap: 6px;
+    padding: 3px 8px;
+    font-size: 0.9rem;
+  }
+  .currency-item-modern {
+    font-size: 0.9rem;
+  }
+  .currency-icon {
+    font-size: 1em;
+  }
+  .lang-select {
+    padding: 5px 12px 5px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .currency-bar-modern.small {
+    gap: 4px;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+  }
+  .currency-item-modern {
+    font-size: 0.8rem;
+  }
+  .currency-icon {
+    font-size: 0.9em;
+  }
+  .lang-select {
+    padding: 4px 10px 4px 6px;
+    font-size: 0.8rem;
+  }
+}
+
 
 /* ===== BURGER MENU ===== */
 .burger {
@@ -187,41 +227,48 @@ a {
   left: -270px;
   width: 260px;
   height: 100vh;
-  background: #fff;
-  box-shadow: 2px 0 24px rgba(21, 190, 196, 0.09);
+  background: linear-gradient(145deg, #ffffff, #f7f9fb);
+  box-shadow: 4px 0 18px rgba(0, 0, 0, 0.08);
   z-index: 9999;
-  transition: left 0.35s ease;
-  padding: 28px 18px;
+  transition: left 0.35s ease, box-shadow 0.3s ease;
+  padding: 28px 22px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
+  border-radius: 0 14px 14px 0;
 }
 .sidebar.active {
   left: 0;
 }
+
+/* Close Button */
 .sidebar-close {
-  background: none;
+  background: #f0f4f8;
   border: none;
   position: absolute;
-  top: 12px;
+  top: 14px;
   right: 16px;
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
   border-radius: 50%;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 .sidebar-close:hover {
-  background: #f7faff;
+  background: #15bec4;
 }
 .close-line {
   position: absolute;
-  left: 6px;
-  top: 13px;
+  left: 7px;
+  top: 14px;
   width: 16px;
   height: 2.5px;
   background: #222;
   border-radius: 2px;
   transition: transform 0.25s ease, background 0.2s;
+}
+.sidebar-close:hover .close-line {
+  background: #fff;
+  box-shadow: 0 0 6px #fff;
 }
 .close-line1 {
   transform: rotate(45deg);
@@ -229,48 +276,64 @@ a {
 .close-line2 {
   transform: rotate(-45deg);
 }
-.sidebar-close:hover .close-line {
-  background: #15bec4;
-  box-shadow: 0 0 6px #15bec4aa;
-}
 
+/* Links */
 .sidebar-links {
   list-style: none;
   padding: 0;
-  margin: 40px 0 0 0;
+  margin: 50px 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
+}
+.sidebar-links li {
+  display: flex;
+  align-items: center;
 }
 .sidebar-links .nav-link,
 .sidebar-links .calculator-btn {
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   color: #333;
   text-decoration: none;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   background: none;
   border: none;
-  padding: 8px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
   text-align: left;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 .sidebar-links .nav-link:hover,
 .sidebar-links .calculator-btn:hover {
+  background: #e9f9fa;
+  color: #0db2c4;
+  transform: translateX(4px);
+}
+.nav-icon {
+  font-size: 1.2rem;
   color: #0db2c4;
 }
+
+/* Lang section */
 .sidebar-lang {
   margin-top: auto;
   padding-top: 18px;
   border-top: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
 }
 
-/* ===== SIDEBAR OVERLAY ===== */
+/* Overlay */
 .sidebar-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 9998;
   transition: opacity 0.3s;
 }
@@ -281,16 +344,19 @@ a {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .nav-links {
-    gap: 12px;
-  }
-  .logo img {
-    height: 40px;
+  .sidebar {
+    width: 240px;
+    padding: 24px 18px;
   }
 }
 @media (max-width: 700px) {
+  .sidebar {
+    width: 80%;
+    max-width: 280px;
+    border-radius: 0 16px 16px 0;
+  }
   .nav-links {
-    display: none;
+    display: none; /* navbar links yashirinadi */
   }
   .burger {
     display: flex;
@@ -299,6 +365,13 @@ a {
     gap: 6px;
   }
 }
+@media (max-width: 420px) {
+  .sidebar {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
 
 /* ====== SLIDER SECTION ====== */
 .slider-section {
@@ -331,44 +404,54 @@ a {
   left: 0;
   top: 0;
   opacity: 0;
-  transition: opacity 0.7s;
+  transition: opacity 0.7s ease-in-out;
   z-index: 1;
   min-width: 100%;
   max-height: 100%;
-}
-
-@media (max-width: 1200px) {
-  .slider-container {
-    aspect-ratio: 16 / 8;
-  }
-  .slide {
-    aspect-ratio: 16 / 8;
-    border-radius: 1rem;
-  }
-}
-@media (max-width: 900px) {
-  .slider-container {
-    aspect-ratio: 16 / 9;
-  }
-  .slide {
-    aspect-ratio: 16 / 9;
-    border-radius: 0.8rem;
-  }
-}
-@media (max-width: 600px) {
-  .slider-container {
-    aspect-ratio: 16 / 10;
-  }
-  .slide {
-    aspect-ratio: 16 / 10;
-    border-radius: 0.5rem;
-  }
 }
 .slide.active {
   opacity: 1;
   position: relative;
   z-index: 2;
 }
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rasm konteynerni to‘liq qoplaydi */
+  border-radius: 1.2rem;
+}
+
+
+/* ==== SLIDE TEXT ==== */
+.slide-text {
+  position: absolute;
+  bottom: 0; /* pastga tushiriladi */
+  left: 0;
+  width: 100%;
+  padding: 6rem 3rem;
+  text-align: center;
+
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+
+  /* Gradient background pastdan yuqoriga */
+  /* background: linear-gradient(to top, rgba(12, 148, 158, 0.7) 30%, rgba(0,0,0,0) 100%); */
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  border-radius: 0 0 12px 12px; /* pastki burchaklar radius */
+}
+
+/* Aktiv slide bo‘lganda animatsiya bilan chiqishi */
+.slide.active .slide-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==== SLIDER BUTTONS ==== */
 .slider-btn {
   position: absolute;
   display: none !important;
@@ -388,29 +471,44 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Yangi: pastki rasm balandligiga moslashadi */
 }
-
 .slider-btn.prev {
   left: 18px;
 }
 .slider-btn.next {
   right: 18px;
 }
-
 .slider-btn:hover {
   background: linear-gradient(120deg, #008594 0%, #07b4c1 100%);
   box-shadow: 0 4px 16px 0 rgba(30, 95, 255, 0.18);
 }
 
-/* RESPONSIVE BUTTONS */
+/* ==== RESPONSIVE ==== */
+@media (max-width: 1200px) {
+  .slider-container {
+    aspect-ratio: 16 / 8;
+  }
+  .slide {
+    aspect-ratio: 16 / 8;
+    border-radius: 1rem;
+  }
+}
 @media (max-width: 900px) {
+  .slider-container {
+    aspect-ratio: 16 / 9;
+  }
+  .slide {
+    aspect-ratio: 16 / 9;
+    border-radius: 0.8rem;
+  }
+  .slide-text {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
   .slider-btn {
     width: 36px;
     height: 36px;
     font-size: 1.1rem;
-    left: 8px;
-    right: 8px;
   }
   .slider-btn.prev {
     left: 8px;
@@ -420,12 +518,22 @@ a {
   }
 }
 @media (max-width: 600px) {
+  .slider-container {
+    aspect-ratio: 16 / 10;
+  }
+  .slide {
+    aspect-ratio: 16 / 10;
+    border-radius: 0.5rem;
+  }
+  .slide-text {
+    font-size: 1rem;
+    padding: 8px 16px;
+    bottom: 10%;
+  }
   .slider-btn {
     width: 28px;
     height: 28px;
     font-size: 0.95rem;
-    left: 4px;
-    right: 4px;
   }
   .slider-btn.prev {
     left: 4px;
@@ -434,6 +542,9 @@ a {
     right: 4px;
   }
 }
+
+
+
 
 /* ====== SERVICES SECTION ====== */
 .services-title {
@@ -1253,7 +1364,7 @@ a {
 
 .partners-title {
   text-align: center;
-  color: #1eafbb;
+  color: #0b94a9;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2.2rem;
@@ -1382,7 +1493,7 @@ a {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #0db2c4;
+  color: #0b94a9;
   cursor: pointer;
   transition: color 0.2s, box-shadow 0.2s;
   border-radius: 50%;
@@ -1394,14 +1505,14 @@ a {
 }
 #close-calculator:hover {
   color: #fff;
-  background: linear-gradient(120deg, #0db2c4 60%, #16c7c4 100%);
+  background: linear-gradient(120deg, #0b94a9 60%, #0b94a9 100%);
   box-shadow: 0 2px 8px #15bec455;
 }
 .calculator h2 {
   margin-top: 0;
   margin-bottom: 22px;
   font-size: 1.5rem;
-  color: #0db2c4;
+  color: #0b94a9;
   text-align: center;
   letter-spacing: 0.5px;
   font-weight: 700;
@@ -1414,7 +1525,7 @@ a {
 }
 .calculator label {
   font-weight: 600;
-  color: #0db2c4;
+  color: #0b94a9;
   margin-bottom: 2px;
   font-size: 1.04rem;
   letter-spacing: 0.2px;
@@ -1434,13 +1545,13 @@ a {
 }
 .calculator input:focus,
 .calculator select:focus {
-  border-color: #0db2c4;
+  border-color: #0b94a9;
   outline: none;
   box-shadow: 0 2px 8px #15bec433;
 }
 .calculator .modern-btn {
   padding: 12px 0;
-  background: linear-gradient(90deg, #15bec4 60%, #16c7c4 100%);
+  background: linear-gradient(90deg, #0b94a9 60%, #0b94a9 100%);
   color: #fff;
   border: none;
   border-radius: 9px;
@@ -1454,13 +1565,13 @@ a {
   letter-spacing: 0.5px;
 }
 .calculator .modern-btn:hover {
-  background: linear-gradient(90deg, #18cbcb 60%, #09c2c2 100%);
+  background: linear-gradient(90deg, #0b94a9 60%, #09c2c2 100%);
   box-shadow: 0 4px 16px #15bec433;
 }
 .calculator .result {
   margin-top: 22px;
   font-size: 1.13rem;
-  color: #0db2c4;
+  color: #0b94a9;
   background: #f2f8ff;
   border-radius: 9px;
   padding: 16px 12px;
@@ -1693,7 +1804,7 @@ footer {
 .order-form button {
   width: 100%;
   padding: 10px;
-  background: #0c8aa0;
+  background: #0b94a9;
   color: white;
   font-size: 14px;
   border: none;
@@ -1706,88 +1817,7 @@ footer {
   background: #1bb8b0;
 }
 
-/* Modern Shorts Section */
-.shorts-modern-container {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 40px 0;
-}
-
-.shorts-card {
-  position: relative;
-  width: 270px;
-  aspect-ratio: 9 / 16;
-  background: #000;
-  border-radius: 24px;
-  box-shadow: 0 6px 24px rgba(30, 144, 255, 0.13);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.22s, box-shadow 0.22s;
-  cursor: pointer;
-}
-
-.shorts-card:hover {
-  transform: scale(1.04);
-  box-shadow: 0 12px 32px rgba(30, 144, 255, 0.18);
-}
-
-.shorts-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
-  display: block;
-  pointer-events: none;
-  filter: brightness(0.93);
-  transition: filter 0.2s;
-}
-
-.shorts-card:hover video {
-  filter: brightness(1);
-}
-
-.shorts-play-btn {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background: url('data:image/svg+xml;utf8,<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="red"/><polygon points="32,25 60,40 32,55" fill="white"/></svg>')
-    center center no-repeat;
-  background-size: 80px 80px;
-  opacity: 0.92;
-  pointer-events: none;
-}
-
-@media (max-width: 900px) {
-  .shorts-modern-container {
-    gap: 18px;
-  }
-  .shorts-card {
-    width: 180px;
-  }
-  .shorts-play-btn {
-    width: 54px;
-    height: 54px;
-    background-size: 54px 54px;
-  }
-}
-@media (max-width: 600px) {
-  .shorts-modern-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  .shorts-card {
-    width: 98vw;
-    max-width: 320px;
-  }
-}
+/*===== MAP SECTION ======*/  
 
 .map-section {
   padding: 48px 0 32px 0;
@@ -1938,6 +1968,7 @@ footer {
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .lang-btn:hover {
@@ -1945,7 +1976,37 @@ footer {
 }
 
 .lang-btn.active {
-  background: #333;
+  background: #0b94a9;
   color: #fff;
-  border-color: #333;
+  border-color: #ffffff;
 }
+
+/* Planshet */
+@media (max-width: 768px) {
+  .lang-switcher {
+    gap: 6px;
+    margin-right: 10px;
+  }
+
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Telefon */
+@media (max-width: 480px) {
+  .lang-switcher {
+    gap: 3px;
+    margin-right: 0;
+  }
+
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+
+
+

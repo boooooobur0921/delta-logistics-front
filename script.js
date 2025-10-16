@@ -94,33 +94,7 @@ if (contactForm) {
   })
 }
 
-// // Google Sheetsga yuborish uchun
-// document.addEventListener('DOMContentLoaded', function() {
-//   const form = document.getElementById('lead-form');
-//   if (form) {
-//     form.addEventListener('submit', function(e) {
-//       e.preventDefault();
-//       const status = document.getElementById('form-status');
-//       status.textContent = "Yuborilmoqda...";
-//       const data = new FormData(form);
-//       fetch('https://script.google.com/u/0/home/projects/1sXn1utsroEhJ8cxjBXJroVMRjwD674VtBREkzOBlv7fOJ-clcuzTy9rY/settings', {
-//         method: 'POST',
-//         body: data,
-//       })
-//       .then(res => {
-//         if (res.ok) {
-//           status.textContent = "Ma'lumot yuborildi!";
-//           form.reset();
-//         } else {
-//           status.textContent = "Xatolik yuz berdi. Qayta urinib ko‘ring.";
-//         }
-//       })
-//       .catch(() => {
-//         status.textContent = "Xatolik yuz berdi. Qayta urinib ko‘ring.";
-//       });
-//     });
-//   }
-// });
+
 
 function animateCurrencyValue(id, newValue) {
   const el = document.getElementById(id)
@@ -174,6 +148,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 })
+
+// 🌍 Tarjima matnlari
+const translations = {
+  uz: {
+    error: "❗ Iltimos, og‘irlik va hajmni to‘g‘ri kiriting.",
+    price: "Narx",
+    note: "💡 Bu narxlar taxminiy. Xavfli yoki o‘ziga xos yuklar uchun alohida hisob-kitob qilinadi."
+  },
+  en: {
+    error: "❗ Please enter valid weight and volume.",
+    price: "Price",
+    note: "💡 These prices are approximate. Dangerous or special cargo requires separate calculation."
+  },
+  ru: {
+    error: "❗ Пожалуйста, введите правильный вес и объем.",
+    price: "Цена",
+    note: "💡 Эти цены приблизительные. Для опасных или особых грузов требуется отдельный расчет."
+  }
+}
+
+// // 🌍 Hozirgi til (default: uz)
+// let currentLang = "uz"
+// function setLanguage(lang) {
+//   currentLang = lang
+// }
+
+// === FORMULALAR QOLADI ===
 function getPricePerCube(weightPerCube) {
   if (weightPerCube <= 150) return 90
   if (weightPerCube <= 200) return 110
@@ -236,6 +237,7 @@ function zhangFormula(weight, volume, packing) {
   }
 }
 
+// === ASOSIY FUNKSIYA ===
 function calculateBestPrice() {
   const weight = Number.parseFloat(document.getElementById("weight").value)
   const volume = Number.parseFloat(document.getElementById("volume").value)
@@ -243,7 +245,7 @@ function calculateBestPrice() {
   const resultDiv = document.getElementById("result")
 
   if (isNaN(weight) || isNaN(volume) || weight <= 0 || volume <= 0) {
-    resultDiv.innerHTML = "❗ Iltimos, og‘irlik va hajmni to‘g‘ri kiriting."
+    resultDiv.innerHTML = translations[currentLang].error
     return
   }
 
@@ -253,11 +255,11 @@ function calculateBestPrice() {
   const cheaper = nexus.total < zhang.total ? nexus : zhang
 
   resultDiv.innerHTML = `
-    <strong>Narx: $${cheaper.total.toFixed(2)}</strong><br>
-     
-    <em>💡 Bu narxlar taxminiy. Xavfli yoki o‘ziga xos yuklar uchun alohida hisob-kitob qilinadi.</em>
+    <strong>${translations[currentLang].price}: $${cheaper.total.toFixed(2)}</strong><br>
+    <em>${translations[currentLang].note}</em>
   `
 }
+
 
 // Loader
 window.addEventListener("load", () => {
@@ -271,32 +273,39 @@ window.addEventListener("load", () => {
 })
 
 const serviceData = {
-  auto: {
-    uz: {
-      title: "Avto transporti (Fura)",
-      img: "image/services/3.png",
-      desc: "Xitoydan O'zbekistonga avto transporti orqali yuklarni tez, xavfsiz va ishonchli tarzda yetkazib beramiz.",
-      details: [
-        "Yetkazib berish muddati: 20–22 kun",
-        "Yo'nalish: Qozog'iston va Qirg'iziston orqali",
-        "Real vaqt kuzatuvi va to'liq sug'urta",
-        "Fura o'lchami: 13.6m × 2.45m × 2.7m-3",
-        "Hajmi: 90–105 m³",
-      ],
-    },
-    en: {
-      title: "Road Transport (Truck)",
-      img: "image/services/3.png",
-      desc: "We provide fast, safe, and reliable road transportation from China to Uzbekistan.",
-      details: [
-        "Delivery time: 20–22 days",
-        "Route: via Kazakhstan and Kyrgyzstan",
-        "Real-time tracking & full insurance",
-        "Truck size: 13.6m × 2.45m × 2.7m-3",
-        "Volume: 90–105 m³",
-      ],
-    },
+auto: {
+  uz: {
+    title: "Avto transporti (Fura)",
+    img: "image/services/3.png",
+    desc: "Xitoydan O'zbekistonga yuklaringizni avto transporti orqali xavfsiz, qulay va ishonchli tarzda yetkazib beramiz. Avtotransport – narx va tezlik bo‘yicha eng maqbul yechimlardan biridir.",
+    details: [
+      "Yetkazib berish muddati: odatda 20–22 kun",
+      "Asosiy yo‘nalish: Qozog‘iston va Qirg‘iziston orqali",
+      "Real vaqt kuzatuvi va to‘liq sug‘urta kafolati",
+      "Fura o‘lchami: 13.6m × 2.45m × 2.7m–3.0m",
+      "Sig‘imi: 90–145 m³ gacha yuk qabul qiladi",
+      "Og‘irlik chegarasi: 1–27 tonnagacha",
+      "Yuklarni xavfsiz joylash va qadoqlash xizmati",
+      "O‘z vaqtida yetkazib berish kafolati",
+    ],
   },
+  en: {
+    title: "Road Transport (Truck)",
+    img: "image/services/3.png",
+    desc: "We provide safe, convenient, and reliable road transportation services from China to Uzbekistan. Road transport is one of the most cost-effective and flexible solutions.",
+    details: [
+      "Delivery time: usually 20–22 days",
+      "Main route: via Kazakhstan and Kyrgyzstan",
+      "Real-time tracking & full insurance coverage",
+      "Truck dimensions: 13.6m × 2.45m × 2.7m–3.0m",
+      "Capacity: up to 90–145 m³",
+      "Weight limit: up to 1–27 tons",
+      "Safe cargo loading & packaging services",
+      "Guaranteed on-time delivery",
+    ],
+  },
+},
+
 
   rail: {
     uz: {
@@ -309,6 +318,12 @@ const serviceData = {
         "Katta hajmdagi yuklar uchun qulay narx",
         "Yuk hajmi: 1–27 tonna",
         "Sug'urta va bojxona rasmiylashtiruvi",
+        "Konteyner turlari va sig‘imi:",
+          " 20GP — 28 m³, 28 tonna (5,88 × 2,30 × 2,30 m)",
+          " 20HQ — 31 m³, 28 tonna (5,88 × 2,30 × 2,65 m)",
+          " 40GP — 65 m³, 28 tonna (12,12 × 2,30 × 2,30 m)",
+          " 40HQ — 68 m³, 28 tonna (12,12 × 2,30 × 2,65 m)",
+          " 45HQ — 80 m³, 27 tonna (13,51 × 2,30 × 2,68 m)"
       ],
     },
     en: {
@@ -321,90 +336,111 @@ const serviceData = {
         "Affordable rates for large volumes",
         "Cargo weight: 1–27 tons",
         "Insurance & customs clearance",
+        "Container types & capacity:",
+           " 20GP — 28 m³, 28 tons (5.88 × 2.30 × 2.30 m)",
+           " 20HQ — 31 m³, 28 tons (5.88 × 2.30 × 2.65 m)",
+           " 40GP — 65 m³, 28 tons (12.12 × 2.30 × 2.30 m)",
+           " 40HQ — 68 m³, 28 tons (12.12 × 2.30 × 2.65 m)",
+           " 45HQ — 80 m³, 27 tons (13.51 × 2.30 × 2.68 m)"
       ],
     },
   },
 
-  air: {
-    uz: {
-      title: "Havo transporti",
-      img: "image/services/1.png",
-      desc: "Yuklaringizni eng qisqa vaqtda havo transporti orqali xavfsiz va tezkor yetkazib beramiz.",
-      details: [
-        "Yetkazib berish muddati: 3–7 kun",
-        "Yuk hajmi: 100kg – 30t",
-        "Eng tez va ishonchli usul",
-        "Har xil samolyot turlari bilan tashish",
-        "Sug'urta va kuzatuv imkoniyati",
-      ],
-    },
-    en: {
-      title: "Air Transport",
-      img: "image/services/1.png",
-      desc: "We deliver your cargo quickly and safely by air transport in the shortest possible time.",
-      details: [
-        "Delivery time: 3–7 days",
-        "Cargo weight: 100kg – 30t",
-        "Fastest & most reliable option",
-        "Various aircraft types available",
-        "Insurance & tracking included",
-      ],
-    },
+air: {
+  uz: {
+    title: "Havo transporti",
+    img: "image/services/1.png",
+    desc: "Eng tezkor va ishonchli usul – yuklaringizni havo transporti orqali qisqa muddatda, xavfsiz va qulay yetkazib beramiz.",
+    details: [
+      "Yetkazib berish muddati: odatda 3–7 ish kuni",
+      "Yuk hajmi: kichik partiyalardan (100 kg) tortib katta hajmgacha (30 tonnagacha)",
+      "Xalqaro reyslar orqali tez va ishonchli tashish",
+      "Yuklaringiz uchun to‘liq sug‘urta va doimiy kuzatuv imkoniyati",
+      "O‘z vaqtida yetkazib berish kafolati",
+    ],
   },
+  en: {
+    title: "Air Transport",
+    img: "image/services/1.png",
+    desc: "The fastest and most reliable way – we deliver your cargo by air transport safely, conveniently, and within the shortest time.",
+    details: [
+      "Delivery time: usually 3–7 business days",
+      "Cargo capacity: from small shipments (100 kg) up to large loads (30 tons)",
+      "Fast and reliable international air freight services",
+      "Comprehensive insurance coverage and real-time tracking",
+      "Guaranteed on-time delivery",
+    ],
+  },
+},
 
-  declaration: {
-    uz: {
-      title: "Deklaratsiya xizmatlari",
-      img: "image/services/declaration.jpg",
-      desc: "Barcha bojxona hujjatlari va rasmiylashtiruv jarayonlarini siz uchun tez va qulay tarzda amalga oshiramiz.",
-      details: [
-        "Eksport & import deklaratsiya",
-        "Professional maslahat va hujjatlar tayyorlash",
-        "Bojxona jarayonlarida to'liq ko'mak",
-        "Xatoliklarni oldini olish",
-        "O'z vaqtida va aniq xizmat",
-      ],
-    },
-    en: {
-      title: "Customs Declaration",
-      img: "image/services/declaration.jpg",
-      desc: "We handle all customs documentation and clearance processes quickly and efficiently for you.",
-      details: [
-        "Export & import declaration",
-        "Professional consulting & paperwork",
-        "Full support during customs procedures",
-        "Avoiding mistakes in documentation",
-        "Timely and accurate service",
-      ],
-    },
-  },
 
-  warehouse: {
-    uz: {
-      title: "Omborlar",
-      img: "image/services/whdul.png",
-      desc: "Xitoyning turli shaharlarida joylashgan omborlarimiz orqali yuklaringizni saqlash va jo'natishda qulay sharoit yaratamiz.",
-      details: [
-        "Yiwu — eng katta savdo markazi",
-        "Guangzhou — janubiy Xitoy markazi",
-        "Urumqi — Markaziy Osiyoga yaqin",
-        "Tezkor yuk qabul qilish va jo'natish",
-        "Xavfsiz saqlash sharoitlari",
-      ],
-    },
-    en: {
-      title: "Warehouses",
-      img: "image/services/whdul.png",
-      desc: "We provide convenient storage and shipping solutions through our warehouses located in various cities of China.",
-      details: [
-        "Yiwu — largest trade hub",
-        "Guangzhou — southern China hub",
-        "Urumqi — close to Central Asia",
-        "Fast cargo handling & dispatch",
-        "Safe and secure storage",
-      ],
-    },
+declaration: {
+  uz: {
+    title: "Deklaratsiya xizmatlari",
+    img: "image/services/declaration.jpg",
+    desc: "Yuklaringizni bojxona rasmiylashtiruvi jarayonida barcha hujjatlarni to‘liq va aniq tayyorlab, sizni ortiqcha tashvishlardan xalos qilamiz.",
+    details: [
+      "Eksport va import deklaratsiyalarni rasmiylashtirish",
+      "Bojxona jarayonlari bo‘yicha professional maslahat",
+      "Hujjatlarni to‘g‘ri va tez tayyorlash",
+      "Jarayon davomida to‘liq ko‘mak va kuzatuv",
+      "Xatoliklarning oldini olish",
+      "O‘z vaqtida va kafolatlangan xizmat",
+    ],
   },
+  en: {
+    title: "Customs Declaration",
+    img: "image/services/declaration.jpg",
+    desc: "We take care of your customs clearance by preparing all documents accurately and efficiently, saving you from unnecessary hassle.",
+    details: [
+      "Preparation of export and import declarations",
+      "Professional customs consulting",
+      "Accurate and fast documentation",
+      "Full support and monitoring during the process",
+      "Eliminating risks of mistakes",
+      "Timely and guaranteed service",
+    ],
+  },
+},
+
+
+warehouse: {
+  uz: {
+    title: "Omborlar",
+    img: "image/services/whdul.png",
+    desc: "Xitoydagi omborlarimiz orqali yuklaringizni xavfsiz saqlash, qadoqlash va jo‘natishda to‘liq xizmat taqdim etamiz.",
+    details: [
+      "Omborlar joylashuvi: ",
+      "Yiwu",
+      "Guangzhou",
+      "Urumqi",
+      "Xian",
+      "Khorgos",
+      "Doimiy video kuzatuv va xavfsizlik nazorati",
+      "Yuklarni professional qadoqlash xizmati",
+      "Tezkor yuk qabul qilish va jo‘natish xizmati",
+      "Xavfsiz va ishonchli saqlash sharoitlari mavjud",
+    ],
+  },
+  en: {
+    title: "Warehouses",
+    img: "image/services/whdul.png",
+    desc: "We provide full storage, packaging, and shipping services through our warehouses in China.",
+    details: [
+      "Warehouse locations: ",
+      "Yiwu",
+      "Guangzhou",
+      "Urumqi",
+      "Xian",
+      "Khorgos",
+      "24/7 video surveillance and security monitoring",
+      "Professional cargo packaging service",
+      "Fast cargo reception and dispatch process",
+      "Safe and reliable storage conditions",
+    ],
+  },
+}
+,
 }
 
 const modal = document.getElementById("serviceModal")
@@ -733,3 +769,7 @@ async function translateHtml(to, htmlString, from = undefined) {
   const enHtml = await translateHtml("en", uzHtml)
   console.log(enHtml)
 })()
+
+
+
+
