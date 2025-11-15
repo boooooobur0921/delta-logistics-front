@@ -544,6 +544,181 @@ a {
 }
 
 
+.about-modern {
+  background: #f8fafc;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-modern-container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* Chap qism */
+.about-left {
+  flex: 1.3;
+}
+
+.main-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1f9dab;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #1f9dab;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.about-text h2 {
+  font-size: 22px;
+  color: #1f9dab;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* Xizmatlar */
+.services-modern {
+  margin-top: 30px;
+}
+
+.services-modern h3 {
+  font-size: 22px;
+  color: #1f9dab;
+  margin-bottom: 15px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.service-card {
+  flex: 1 1 calc(50% - 10px);
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.service-card img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 10px;
+}
+
+.service-card h4 {
+  color: #1f9dab;
+  margin-bottom: 5px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Nega biz */
+.why-us {
+  margin-top: 30px;
+}
+
+.why-us h3 {
+  font-size: 20px;
+  color: #1f9dab;
+  margin-bottom: 10px;
+}
+
+.why-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-us ul li {
+  background: #eaf3ff;
+  margin-bottom: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* O‘ng qism */
+.about-right {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+  font-size: 30px;
+  color: #1f9dab;
+}
+
+.stat-card p {
+  color: #444;
+  font-size: 14px;
+}
+
+.map-image img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-modern-container {
+    flex-direction: column;
+  }
+
+  .services-grid {
+    flex-direction: column;
+  }
+}
 
 
 /* ====== SERVICES SECTION ====== */
@@ -873,7 +1048,18 @@ a {
 }
 
 .advantages-left img {
-  max-width: 350px;
+  max-width: 450px;
+  height: auto;
+  width: 100%;
+  border-radius: 16px;       /* yumaloq burchaklar */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);  /* yumshoq soya */
+  object-fit: cover;         /* rasm to‘liq joyni egallasin */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.advantages-left img:hover {
+  transform: scale(1.03);    /* hoverda biroz kattalashadi */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .advantages-right {
@@ -1872,85 +2058,120 @@ footer {
   }
 }
 
-/*===== TEAM SECTION ====== */
+/*===== TEAM SECTION ======*/
 .team-section {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 10px;
+  background: #f9fafb;
   overflow: hidden;
 }
 
+/* ====== CARD UMUMIY USLUB ====== */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== RASM ===== */
+.card img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #ececec;
+}
+
+/* ===== MATN ===== */
+.card h3 {
+  margin: 8px 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ===== CEO CARD ===== */
 .ceo {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .ceo .card {
-  display: inline-block;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  background: #fff;
+  width: 280px;
+  padding: 25px 20px;
 }
 
-.ceo img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 15px;
+.ceo .card img {
+  width: 160px;
+  height: 160px;
+  border: 3px solid #ddd;
 }
 
-/* Slider */
-.b-slider {
-  position: relative;
-  width: 100%; /* butun ekranga moslashadi */
-  max-width: 1200px; /* juda katta bo‘lib ketmasligi uchun limit */
-  margin: 0 auto; /* markazga joylashadi */
-  overflow: hidden; /* tashqariga chiqib ketgan qismi ko‘rinmaydi */
-  -webkit-font-smoothing: antialiased; /* tiniq rendering */
-  image-rendering: -webkit-optimize-contrast; /* tiniq rasm uchun */
-  image-rendering: crisp-edges;
+/* ===== XODIMLAR GRID ===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px; /* minimal, chiroyli oraliq */
+  align-items: stretch;
+  justify-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.slider-track {
-  display: flex;
-  gap: 20px;
-  width: max-content; /* barcha kartalarni sig‘diradi */
-  animation: scroll 30s linear infinite;
-}
-
-.b-slider .card {
-  min-width: 250px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  transition: transform 0.3s ease;
-}
-
-.b-slider .card:hover {
-  transform: scale(1.05);
-}
-
-.b-slider img {
-  display: block;
+.team-grid .card {
   width: 100%;
-  height: auto; /* asl nisbatni saqlaydi */
-  max-height: 250px; /* kartochkada juda katta bo‘lib ketmasin */
-  object-fit: cover; /* rasmlarni cho‘zmaydi, chiroyli kesadi */
-  border-radius: 10px;
-  margin-bottom: 10px;
-  image-rendering: auto; /* brauzer o‘zi eng yaxshi usulni tanlaydi */
+  max-width: 260px;
+  padding: 18px 12px;
 }
 
-/* Animatsiya */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-  100% {
-    transform: translateX(-50%);
-  } /* faqat yarim uzunlikka siljiydi */
+
+  .ceo .card {
+    width: 240px;
+  }
 }
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ceo .card img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+
+
 
 .lang-switcher {
   display: flex;

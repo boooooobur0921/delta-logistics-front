@@ -70,24 +70,20 @@
   </li>
 </ul>
 
-      <div class="header-right">
-        <div class="currency-bar-modern small">
-          <div class="currency-item-modern">
-            <span class="currency-icon"><i class="fa-solid fa-dollar-sign"></i></span>
-            <span class="currency-value" id="usd-rate">12700</span>
-            <span class="currency-unit">UZS</span>
-          </div>
-          <div class="currency-item-modern">
-            <span class="currency-icon"><i class="fa-solid fa-yen-sign"></i></span>
-            <span class="currency-value" id="cny-rate">1750</span>
-            <span class="currency-unit">UZS</span>
-          </div>
-        </div>
-
-        <!-- <select id="lang-select" class="lang-select" aria-label="Tilni tanlang">
-          <option value="uz">UZ</option>
-          <option value="ru">RU</option>
-        </select> -->
+<div class="header-right">
+  <div class="currency-bar-modern small">
+    <div class="currency-item-modern">
+      <span class="currency-icon"><i class="fa-solid fa-dollar-sign"></i></span>
+      <span class="currency-value" id="usd-rate">–</span>
+      <span class="currency-unit">UZS</span>
+    </div>
+    <div class="currency-item-modern">
+      <span class="currency-icon"><i class="fa-solid fa-yen-sign"></i></span>
+      <span class="currency-value" id="cny-rate">–</span>
+      <span class="currency-unit">UZS</span>
+    </div>
+  </div>
+</div>
 
         <button class="burger nav-anim" id="burger-menu" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -204,128 +200,91 @@
 
 
 <section class="about-modern" id="about">
-  <div class="about-modern-wrapper" id="aboutWrapper">
-    <!-- Heading -->
-    <h1 class="about-modern-heading-main">
-      Delta Union Logistics
-      <span data-uz="Xalqaro logistika va yuklarni tez yetkazib berish" 
-            data-en="International logistics and transportation services">
-        Xalqaro logistika va yuklarni tez yetkazib berish bo‘yicha ishonchli yechimlar
-      </span>
-    </h1>
+  <div class="about-modern-container">
+    <!-- Chap qism -->
+    <div class="about-left">
+      <h1 class="main-title" 
+          data-uz="Delta Union Logistics" 
+          data-en="Delta Union Logistics">Delta Union Logistics</h1>
 
-    <div class="about-modern-flex">
-      <!-- Chap ustun -->
-      <div class="about-modern-left">
-        <!-- Media joyi -->
-        <div class="about-modern-media">
-          <img src="image/hero-logistics.png" 
-               alt="Delta Union Logistics Promo" 
-               style="width:100%;border-radius:16px;object-fit:cover;max-height:320px;">
+      <p class="subtitle" 
+         data-uz="Xalqaro logistika kompaniyasi" 
+         data-en="International logistics company">
+         Xalqaro logistika kompaniyasi
+      </p>
+
+      <div class="about-image">
+        <img src="image/hero-logistics.png" alt="Delta Union Logistics">
+      </div>
+
+      <div class="about-text">
+        <h2 data-uz="Biz haqimizda" data-en="About Us">Biz haqimizda</h2>
+
+        <p data-uz="<strong>Delta Union Logistics</strong> — 2023-yilda tashkil topgan va qisqa vaqt ichida logistika sohasida ishonchli hamkor sifatida tan olingan kompaniya." 
+           data-en="<strong>Delta Union Logistics</strong> — founded in 2023, has quickly become a trusted partner in the logistics industry.">
+           <strong>Delta Union Logistics</strong> — 2023-yilda tashkil topgan va qisqa vaqt ichida logistika sohasida ishonchli hamkor sifatida tan olingan kompaniya.
+        </p>
+
+        <p data-uz="3 yil davomida 300 dan ortiq mijozlar bizga ishonch bildirdi. Kompaniyamiz <strong>Xitoydan O‘zbekistonga</strong> yuklarni tez, xavfsiz va qulay narxlarda yetkazib kelmoqda."
+           data-en="Over 300 clients have trusted us in just 3 years. Our company delivers cargo from <strong>China to Uzbekistan</strong> quickly, safely, and at affordable prices.">
+           2.5 yil davomida 300 dan ortiq mijozlar bizga ishonch bildirdi. Kompaniyamiz <strong>Xitoydan O‘zbekistonga</strong> yuklarni tez, xavfsiz va qulay narxlarda yetkazib kelmoqda.
+        </p>
+
+        <p data-uz="<strong> Delta Union Logistics</strong> kompaniyasining maqsadi — har bir mijoz uchun qulay, shaffof va nazorat ostidagi logistika jarayonini ta’minlashdir."
+           data-en="The goal of <strong>Delta Union Logistics</strong> is to provide a convenient, transparent, and controlled logistics process for each client.">
+           Bizning maqsad — har bir mijoz uchun qulay, shaffof va nazorat ostidagi logistika jarayonini ta’minlashdir.
+        </p>
+      </div>
+
+      <!-- Nega biz -->
+      <div class="why-us">
+        <h3 data-uz="Nega aynan Delta Union Logistics?" data-en="Why only Delta Union Logistics?">Nega aynan Delta Union logistics?</h3>
+        <ul>
+          <li data-uz="Jarayonni “A” dan “B” gacha nazorat qilish." data-en="Control the process from “A”  to “B”.">Jarayonni “A” dan “B” gacha nazorat qilish.</li>
+          <li data-uz="Yuklarni masofadan turib kuzatib borish." data-en="Remote tracking of cargo.">Yuklarni masofadan turib kuzatib borish.</li>
+          <li data-uz="Importda va eksportda maksimal qulaylik." data-en="Maximum convenience in import and export. ">Importda va eksportda maksimal qulaylik.</li>
+          <li data-uz="Bojxona rasmiylashtiruvi  va hujjatlarni to‘liq tayyorlash." data-en="Customs clearance and full preparation of documents.">Bojxona rasmiylashtiruvi  va hujjatlarni to‘liq tayyorlash.</li>
+          
+          
+          <!-- <li data-uz="Minimal ishtirok, maksimal ishonch!" data-en="Minimal involvement, maximum trust!"></li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- O‘ng qism -->
+    <div class="about-right">
+      <div class="stats">
+        <div class="stat-card">
+          <h3>300+</h3>
+          <p data-uz="Mijozlar ishonchi" data-en="Trusted clients">Mijozlar ishonchi</p>
         </div>
-
-        <div class="about-modern-content">
-          <!-- Kompaniya haqida -->
-          <h2 class="about-modern-title" data-uz="Kompaniya haqida" data-en="About Company">Kompaniya haqida</h2>
-          <div class="about-modern-desc" 
-               data-uz="Biz Xitoy va dunyoning boshqa mamlakatlari o‘rtasida yuk tashish, bojxona rasmiylashtiruvi, sertifikatlash, konsolidatsiya va ombor xizmatlarini taklif etamiz. Har bir mijozimiz uchun eng qulay va xavfsiz logistika yechimlarini ishlab chiqamiz." 
-               data-en="We offer a wide range of services including international logistics and transportation, including customs clearance, customs declaration, container">
-            <b data-uz="Delta Union Logistics — 2023-yilda tashkil etilgan xalqaro logistika kompaniyasi" 
-               data-en="Delta Union Logistics is an international logistics company established in 2023.">
-              Delta Union Logistics — 2023-yilda tashkil etilgan xalqaro logistika kompaniyasi.
-            </b>
-            Biz Xitoy va dunyoning boshqa mamlakatlari o‘rtasida yuk tashish, bojxona rasmiylashtiruvi, sertifikatlash, konsolidatsiya va ombor xizmatlarini taklif etamiz. Har bir mijozimiz uchun eng qulay va xavfsiz logistika yechimlarini ishlab chiqamiz.
-          </div>
-
-          <!-- Xitoy bilan ishlash -->
-          <div class="about-modern-china" 
-               data-uz="FTL va FCL yo'nalishlari: Agar yukingiz katta hajmda bo‘lsa, biz siz uchun butun fura (FTL) yoki konteynerni (FCL) ajratib beramiz. Bu orqali yuklaringiz boshqa mijozlar bilan aralashmaydi, yo‘l davomida ortiqcha to‘xtashlarsiz tezroq va xavfsizroq yetib keladi. Katta partiya import qiluvchilar uchun eng qulay yechim. LTL va LCL yo'nalishlari: Kichik hajmdagi yuklaringizni boshqa mijozlarning yuklari bilan birlashtirib (konsolidatsiya) O'zbekistonga yetkazib beramiz. Bu yo'nalish orqali transport xarajatlari ancha kamayadi va kichik biznes uchun eng maqbul tanlov bo‘ladi. Yuklaringiz yo‘l davomida muntazam kuzatuv ostida bo‘ladi va belgilangan vaqtda O‘zbekistonga yetkazib beriladi." 
-               data-en="FTL and FCL routes: If your cargo is in large volume, we will allocate a whole truck (FTL) or container (FCL) for you. This way, your cargo will not mix with other customers' cargo, and it will arrive faster and more safely without unnecessary stops along the way. The most convenient solution for large batch importers. LTL and LCL routes: We consolidate your small volume cargo with other customers' cargo and deliver it to Uzbekistan. This route significantly reduces transportation costs and is the most optimal choice for small businesses. Your cargo will be under regular monitoring during the journey and will be delivered to Uzbekistan at the specified time.">
-            <strong>FTL va FCL yo'nalishlari:</strong> Agar yukingiz katta hajmda bo‘lsa, biz siz uchun butun fura (FTL) yoki konteynerni (FCL) ajratib beramiz. Bu orqali yuklaringiz boshqa mijozlar bilan aralashmaydi, yo‘l davomida ortiqcha to‘xtashlarsiz tezroq va xavfsizroq yetib keladi. Katta partiya import qiluvchilar uchun eng qulay yechim. <br><br>
-            <strong>LTL va LCL yo'nalishlari:</strong> Kichik hajmdagi yuklaringizni boshqa mijozlarning yuklari bilan birlashtirib (konsolidatsiya) O'zbekistonga yetkazib beramiz. Bu yo'nalish orqali transport xarajatlari ancha kamayadi va kichik biznes uchun eng maqbul tanlov bo‘ladi. Yuklaringiz yo‘l davomida muntazam kuzatuv ostida bo‘ladi va belgilangan vaqtda O‘zbekistonga yetkazib beriladi.
-          </div>
-
-          <!-- Transport yo‘nalishlari -->
-          <h3 class="about-modern-subtitle" data-uz="Transport yo‘nalishlari" data-en="Modern transport modes">Transport yo‘nalishlari</h3>
-          <ul>
-            <li data-uz="Avto — furalar orqali moslashuvchan marshrutlarda yuk tashishni ta’minlaymiz." data-en="We provide cargo transportation on flexible routes using trucks."><i class="fas fa-car"></i> Avto — furalar orqali moslashuvchan marshrutlarda yuk tashishni ta’minlaymiz.</li>
-            <li data-uz="Avia — yuklarni eng qisqa muddatda yetkazib berish zarur bo‘lganda eng yaxshi tanlov." data-en="Air is the best choice when you need to deliver cargo in the shortest possible time."><i class="fas fa-plane"></i> Avia — yuklarni eng qisqa muddatda yetkazib berish zarur bo‘lganda eng yaxshi tanlov.</li>
-            <li data-uz="Temir yo‘l - narx va jadval muvozanatini ta’minlaydigan, katta hajmdagi yuklar uchun qulay transport turi." data-en="Railway is a convenient mode of transport for large-sized cargo, providing a balance between price and schedule."><i class="fas fa-truck"></i> Temir yo‘l — narx va jadval muvozanatini ta’minlaydigan, katta hajmdagi yuklar uchun qulay transport turi.</li>
-          </ul>
-
-          <!-- Transport xaritasi -->
-          <div class="about-modern-media sm">
-            <img src="image/transprt-map.png" alt="Transport xaritasi" style="width:100%;border-radius:12px;object-fit:cover;max-height:280px;">
-          </div>
-
-          <!-- Xizmatlar -->
-          <ul class="about-modern-list">
-            <li data-uz="Har bir mijoz uchun professional maslahat va individual tariflarni ishlab chiqamiz." data-en="We provide professional services to each customer and individual pricing."> Har bir mijoz uchun professional maslahat va individual tariflarni ishlab chiqamiz.</li>
-            <li data-uz="Ombor va yuklarni saqlash xizmatlarini taqdim etamiz." data-en="We provide storage services for cargo and ships."> Ombor va yuklarni saqlash xizmatlarini taqdim etamiz.</li>
-            <li data-uz="Barcha bojxona jarayonlarini va hujjatlarni to‘liq rasmiylashtiramiz." data-en="We fully formalize all customs procedures and documents."> Barcha bojxona jarayonlarini va hujjatlarni to‘liq rasmiylashtiramiz.</li>
-            <li data-uz="Yuklarni tez, xavfsiz va belgilangan muddatda yetkazib beramiz." data-en="We deliver cargo quickly, safely, and on time."> Yuklarni tez, xavfsiz va belgilangan muddatda yetkazib beramiz.</li>
-            <li data-uz="Yuklarni real vaqt rejimida kuzatish imkoniyatini ta’minlaymiz." data-en="We provide real-time tracking services for cargo.">Yuklarni real vaqt rejimida kuzatish imkoniyatini ta’minlaymiz.</li>
-          </ul>
-
-          <!-- Yondashuv -->
-          <div class="about-modern-note" 
-               data-uz="Biz zamonaviy texnologiyalar, ishonchli hamkorlar va tajribali mutaxassislar jamoasi bilan har bir mijozga individual yondashuvni ta’minlaymiz." 
-               data-en="We provide an individual approach to each client with modern technologies, reliable partners, and a team of experienced specialists.">
-            Biz zamonaviy texnologiyalar, ishonchli hamkorlar va tajribali mutaxassislar jamoasi bilan har bir mijozga individual yondashuvni ta’minlaymiz.
-          </div>
-
-          <!-- Nega aynan biz -->
-          <div class="about-modern-why">
-            <span class="about-modern-why-title" data-uz="Nega aynan biz?" data-en="Why us?">Nega aynan biz?</span>
-            <ul>
-              <li data-uz="Xitoydagi omborlardan yuklaringizni ehtiyotkorlik bilan ortib, to'liq nazorat ostida yo‘lga chiqaramiz." data-en="Transporting your cargo from the ports of Xitoy to the destination is convenient for you."> Xitoydagi omborlardan yuklaringizni ehtiyotkorlik bilan ortib, to‘liq nazorat ostida yo‘lga chiqaramiz.</li> 
-              <li data-uz="Transportning har bir bosqichi — yuk mashinasi, samolyot yoki poyezd — bizning kuzatuvimizda bo‘ladi." data-en="Every step of the journey — truck, plane, or train — is in our control."> Transportning har bir bosqichi — yuk mashinasi, samolyot yoki poyezd — bizning kuzatuvimizda bo‘ladi.</li>
-              <li data-uz="Yo'l davomida yuklaringizni onlayn kuzatish imkoniyatini taqdim etamiz." data-en="We offer the ability to track your shipments online throughout the journey.">Yo‘l davomida yuklaringizni onlayn kuzatish imkoniyatini taqdim etamiz.</li>
-              <li data-uz="O'zbekistonga yuklaringizni tez va xavfsiz qo‘lingizga topshiramiz." data-en="We deliver your cargo to Uzbekistan quickly and safely."> O‘zbekistonga yetib kelgach, yuklaringizni tez va xavfsiz qo‘lingizga topshiramiz.</li>
-            </ul>
-          </div>
+        <div class="stat-card">
+          <h3>12 000<span> t/y</span></h3>
+          <p data-uz="Yillik yuk aylanmasi" data-en="Annual cargo turnover">Yillik yuk aylanmasi</p>
+        </div>
+        <div class="stat-card">
+          <h3>10+</h3>
+          <p data-uz="Yirik loyihalar" data-en="Major projects">Yirik loyihalar</p>
         </div>
       </div>
 
-      <!-- O‘ng ustun -->
-      <div class="about-modern-right">
-        <div class="about-modern-stats">
-          <div class="about-modern-stat-card">
-            <div class="stat-main">10+</div>
-            <div class="stat-desc" data-uz="yirik loyhalarni muvaffaqiyatli amalga oshirdik <br><span>(yiliga)</span>" data-en="we successfully implemented a major project ">biz yirik loyihani muvaffaqiyatli amalga oshirdik <br><span data-uz="(yiliga)" data-en="(per year)">(yiliga)</span></div>
-          </div>
-          <div class="about-modern-stat-card">
-            <div class="stat-main">12 000 <span data-uz="tonna/yiliga" data-en="tonna/year">tonna/yiliga</span></div>
-            <div class="stat-desc" data-uz="yuk aylanmasini ta’minlaymiz" data-en="we provide cargo turnover.">yuk aylanmasini ta’minlaymiz</div>
-          </div>
-          <div class="about-modern-stat-card">
-            <div class="stat-main">200+</div>
-            <div class="stat-desc" data-uz="dunyo bo'ylab ishonchli yetkazib beruvchilar bilan hamkorlik qilamiz" data-en="We cooperate with reliable suppliers around the world">dunyo bo‘ylab ishonchli yetkazib beruvchilar bilan hamkorlik qilamiz</div>
-          </div>
-        </div>
-
-        <div class="about-modern-right-info-cards">
-          <div class="about-modern-right-info-card">
-            <h4 data-uz="Xitoy bilan ishlash" data-en="Working with China">Xitoy bilan ishlash</h4>
-            <p data-uz="Bizning konsolidatsiya markazlarimiz Guangzhou, Yiwu, Shenzhen va boshqa yirik savdo shaharlarida joylashgan. Kichik partiyadan tortib to to‘liq konteynergacha bo‘lgan yuklarni qabul qilamiz va yetkazamiz." data-en="Our consolidation centers are located in Guangzhou, Yiwu, Shenzhen and other major trading cities. We accept and deliver cargoes ranging from small batches to full containers.">Bizning konsolidatsiya markazlarimiz Guangzhou, Yiwu, Shenzhen va boshqa yirik savdo shaharlarida joylashgan. Kichik partiyadan tortib to to‘liq konteynergacha bo‘lgan yuklarni qabul qilamiz va yetkazamiz.</p>
-            <img src="image/china-centers.jpg" alt="Xitoy konsolidatsiya markazlari" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;margin-top:8px;">
-          </div>
-          <div class="about-modern-right-info-card">
-            <h4 data-uz="Transport variantlari" data-en="Transport modes">Transport variantlari</h4>
-            <p data-uz="Biz avto, avia va temir yo‘l transport turlaridan foydalanib, har bir mijoz uchun eng qulay yetkazib berish usulini tanlaymiz." data-en="We use road, air, and rail transport to choose the most convenient delivery method for each client.">Biz avto, avia va temir yo‘l transport turlaridan foydalanib, har bir mijoz uchun eng qulay yetkazib berish usulini tanlaymiz.</p>
-            <img src="image/transport-modes.jpg" alt="Transport variantlari" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;margin-top:8px;">
-          </div>
-          <div class="about-modern-right-info-card">
-            <h4 data-uz="Onlayn kuzatuv" data-en="Online tracking">Onlayn kuzatuv</h4>
-            <p data-uz="Yuklariningizni real vaqt rejimida kuzatish imkonini beruvchi onlayn platformamaiz orqali yuk holati va yetkazib berish berish jarayonidan xabardor bo‘lib turasiz. Bildirishnomalar va holat yangilanishlari avtomatik tarzda yuboriladi." data-en="You will be kept informed of the status of your shipment and delivery progress through our online platform, which allows you to track your shipments in real time. Notifications and status updates are sent automatically.">Yuklaringizni real vaqt rejimida kuzatish imkonini beruvchi onlayn platformamiz orqali yuk holati va yetkazib berish jarayonidan xabardor bo‘lib turasiz. Bildirishnomalar va holat yangilanishlari avtomatik tarzda yuboriladi.</p>
-            <img src="image/online-tracking.jpg" alt="Onlayn kuzatuv" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;margin-top:8px;">
-          </div>
-          
-        </div>
+      <div class="map-image">
+        <img src="image/transport-logistics-concept.jpg" alt="Transport map">
+      </div>
+      <div class="map-image">
+        <img src="image/yusf.jpg" alt="Transport map">
+      </div>
+      <div class="map-image">
+        <img src="image/greo.jpg" alt="Transport map">
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+
 
 
 
@@ -478,7 +437,7 @@
 
   <div class="advantages-container">
     <div class="advantages-left">
-      <img src="image/pngwing.com.png" alt="Yuk tashish" />
+      <img src="image/bizningafzalliklarimiz.jpg" alt="Yuk tashish" />
     </div>
 
     <div class="advantages-right">
@@ -489,7 +448,13 @@
           <p data-uz="Maxsus jadvallar asosida yuklaringiz har doim o‘z vaqtida yetib keladi." data-en="Based on special schedules, your cargo will always arrive on time.">Maxsus jadvallar asosida yuklaringiz har doim o‘z vaqtida yetib keladi.</p>
         </div>
       </div>
-
+      <div class="advantage-item">
+        <i class="fas fa-eye"></i>
+        <div>
+          <h3 data-uz="Yukingizni real vaqt rejimida kuzatib borish imkoniyati" data-en="Real-time tracking of your cargo is available.">Yukingizni real vaqt rejimida kuzatib borish imkoniyati</h3>
+          <p data-uz="Xodimlarimiz yukingizni bosqichlarda doimiy kuzatib boradi." data-en="Our staff will constantly monitor your cargo at all stages.">Xodimlarimiz yukingizni barcha bosqichlarda doimiy kuzatib boradi.</p>
+        </div>
+      </div>
       <div class="advantage-item">
         <i class="fas fa-sliders-h"></i>
         <div>
@@ -501,18 +466,12 @@
       <div class="advantage-item">
         <i class="fas fa-shield-alt"></i>
         <div>
-          <h3 data-uz="Yuklar aslidek va xavfsiz yetib keladi" data-en="The goods arrive intact and safe.">Yuklar aslidek va xavfsiz yetib keladi</h3>
+          <h3 data-uz="Yuklarni xavfsiz yetkazib berish xizmati" data-en="The goods arrive intact and safe.">Yuklar aslidek va xavfsiz yetib keladi</h3>
           <p data-uz="Yukingiz xavfsizligi uchun ishonchli va xavfsiz tashish usullaridan foydalaniladi." data-en="Reliable and safe transportation methods are used to ensure the safety of your cargo.">Yukingiz xavfsizligi uchun ishonchli va xavfsiz tashish usullaridan foydalaniladi.</p>
         </div>
       </div>
 
-      <div class="advantage-item">
-        <i class="fas fa-eye"></i>
-        <div>
-          <h3 data-uz="Yukingizni real vaqt rejimida kuzatib borish imkoniyati" data-en="Real-time tracking of your cargo is available.">Yukingizni real vaqt rejimida kuzatib borish imkoniyati</h3>
-          <p data-uz="Xodimlarimiz yukingizni bosqichlarda doimiy kuzatib boradi." data-en="Our staff will constantly monitor your cargo at all stages.">Xodimlarimiz yukingizni barcha bosqichlarda doimiy kuzatib boradi.</p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -557,7 +516,7 @@
       <div class="contact-card">
         <div class="contact-card-icon telegram"><i class="fab fa-telegram-plane"></i></div>
         <div class="contact-card-content">
-          <div class="contact-card-label" data-uz="Telegram kanal" data-en="Telegram channel"">Telegram kanal</div>
+          <div class="contact-card-label" data-uz="Telegram" data-en="Telegram"">Telegram</div>
           <a href="https://t.me/deltaunionlogistics" class="contact-card-link" target="_blank">t.me/deltaunionlogistics</a>
         </div>
       </div>
@@ -567,95 +526,81 @@
     </div>
   </div>
 </section>
+
+
 <section class="team-section">
   <div class="container">
-    <h2 class="section-title" data-uz="Bizning jamoa" data-en="Our team">Bizning jamoa</h2>
-    <p class="section-subtitle" data-uz="Bizning muvaffaqiyatimiz — jamoamizning kuchida!" data-en="Our success lies in the strength of our team!">Bizning muvaffaqiyatimiz — jamoamizning kuchida!</p>
 
-    <div class="team-container">
-      <!-- CEO -->
-      <div class="ceo">
-        <div class="card">
-          <img src="xodimlar images/ceo.jpg" alt="CEO">
-          <h3>Mirraximov Dilmurod</h3>
-          <p>CEO of logistics</p>
-        </div>
+    <!-- CEO -->
+    <div class="ceo">
+      <div class="card">
+        <img src="xodimlar images/ceo.jpg" alt="CEO">
+        <h3>Mirraximov Dilmurod</h3>
+        <p>CEO of Logistics</p>
+      </div>
+    </div>
+
+    <!-- Xodimlar -->
+    <div class="team-grid">
+      <div class="card">
+        <img src="xodimlar images/2.jpg" alt="">
+        <h3>Orifjonov Ramziddin</h3>
+        <p>Manager of Logistics</p>
       </div>
 
-      <!-- Animatsiya qismi -->
-      <div class="b-slider">
-        <div class="slider-track">
-          <!-- 3 ta manager -->
-          <div class="card">
-            <img src="xodimlar images/1.png" alt="">
-            <h3>Hushboqov Habibullo</h3>
-            <p>Manager of logistics</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/2.jpg" alt="">
-            <h3>Orifjonov Ramziddin</h3>
-            <p>Manager of logistics</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/3.png" alt="">
-            <h3>Akbarov Abdulloh</h3>
-            <p>Manager of logistics</p>
-          </div>
+      <div class="card">
+        <img src="xodimlar images/3.png" alt="">
+        <h3>Akbarov Abdulloh</h3>
+        <p>Manager of Logistics</p>
+      </div>
 
-          <!-- 3 ta qo'llab-quvvatlovchi -->
-          <div class="card">
-            <img src="xodimlar images/4.png" alt="">
-            <h3>Rahmonova Mashxura</h3>
-            <p>Accountant</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/5.png" alt="">
-            <h3>O'razaliyeva Mohidil</h3>
-            <p>Call operator</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/bob.png" alt="">
-            <h3>Ilashev Boburjon</h3>
-            <p>SMM manager</p>
-          </div>
-          <!-- 3 ta boshqa manager -->
-          <div class="card">
-            <img src="xodimlar images/7.png" alt="">
-            <h3>Maxmudov Sanjarbek</h3>
-            <p>Manager of logistics</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/8.jpg" alt="">
-            <h3>Sunnatov Saidakbar</h3>
-            <p>Manager of logistics</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/9.png" alt="">
-            <h3>Abdullayev Asatilla</h3>
-            <p>Manager of logistics</p>
-          </div>
+      <div class="card">
+        <img src="xodimlar images/1.png" alt="">
+        <h3>Hushboqov Habibullo</h3>
+        <p>Manager of Logistics</p>
+      </div>
 
-          <!-- Qayta yozib cheksiz oqim uchun -->
-          <div class="card">
-            <img src="xodimlar images/1.png" alt="">
-            <h3>Hushboqov Habibullo</h3>
-            <p>Manager of logistics</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/2.jpg" alt="">
-            <h3>Orifjonov Ramziddin</h3>
-            <p>Manager of logistics</p>
-          </div>
-          <div class="card">
-            <img src="xodimlar images/3.png" alt="">
-            <h3>Akbarov Abdulloh</h3>
-            <p>Manager of logistics</p>
-          </div>
-        </div>
+      <div class="card">
+        <img src="xodimlar images/4.png" alt="">
+        <h3>Rahmonova Mashhura</h3>
+        <p>Accountant</p>
+      </div>
+
+      <div class="card">
+        <img src="xodimlar images/5.png" alt="">
+        <h3>O'razaliyeva Mohidil</h3>
+        <p>Call Operator</p>
+      </div>
+
+      <div class="card">
+        <img src="xodimlar images/7.png" alt="">
+        <h3>Xoliqulova Zulxumor</h3>
+        <p>Call Operator</p>
+      </div>
+
+      <div class="card">
+        <img src="xodimlar images/bob.png" alt="">
+        <h3>Ilashev Boburjon</h3>
+        <p>SMM Manager</p>
+      </div>
+
+      <div class="card">
+        <img src="xodimlar images/8.jpg" alt="">
+        <h3>Sunnatov Saidakbar</h3>
+        <p>Manager of Logistics</p>
+      </div>
+
+      <div class="card">
+        <img src="xodimlar images/9.png" alt="">
+        <h3>Abdullayev Asatilla</h3>
+        <p>Manager of Logistics</p>
       </div>
     </div>
   </div>
 </section>
+
+
+
 
 <!-- Form Section -->
 <section style="display: flex; justify-content: center; align-items: center; padding: 40px;">
@@ -674,6 +619,8 @@
       <input type="text" name="telefon" placeholder="+998 xx xxx xx xx" required>
 
       <button type="submit" data-uz="Yuborish" data-en="Send">Yuborish</button>
+      <div id="result" style="margin-top: 20px; color: green;"></div>
+
     </form>
   </div>
 </section>

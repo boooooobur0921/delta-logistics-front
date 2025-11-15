@@ -104,14 +104,28 @@ function animateCurrencyValue(id, newValue) {
   setTimeout(() => el.classList.remove("animated"), 700)
 }
 
-// Demo: random kurslarni har 5 soniyada yangilash
-function updateCurrencyRates() {
-  const usd = 12600 + Math.floor(Math.random() * 200) // 12600-12800
-  const cny = 1700 + Math.floor(Math.random() * 80) // 1700-1780
-  animateCurrencyValue("usd-rate", usd)
-  animateCurrencyValue("cny-rate", cny)
+async function fetchCurrencyRates() {
+  try {
+    // API manbasi (100% bepul va ro‘yxatdan o‘tish shart emas)
+    const res = await fetch("https://open.er-api.com/v6/latest/USD");
+    const data = await res.json();
+
+    // USD va CNY ni UZS ga nisbatan olish
+    const uzsPerUsd = data.rates["UZS"];
+    const cnyPerUsd = data.rates["CNY"];
+    const uzsPerCny = uzsPerUsd / cnyPerUsd;
+
+    // Ekranga chiqarish (yaxshi formatda)
+    document.getElementById("usd-rate").textContent = Math.round(uzsPerUsd).toLocaleString();
+    document.getElementById("cny-rate").textContent = Math.round(uzsPerCny).toLocaleString();
+  } catch (err) {
+    console.error("Valyuta kursini olishda xatolik:", err);
+  }
 }
-setInterval(updateCurrencyRates, 5000)
+
+// Har kuni 1 marta (24 soatda) yangilanish
+fetchCurrencyRates();
+setInterval(fetchCurrencyRates, 24 * 60 * 60 * 1000); // 24 soat
 
 // Modal ochish va yopish (kalkulyator)
 document.addEventListener("DOMContentLoaded", () => {
@@ -574,22 +588,35 @@ document.addEventListener("DOMContentLoaded", () => {
   setLanguage(savedLang)
 })
 
-// Yukni kuzatish statusi
-async function checkStatus() {
-  const container = document.getElementById("container").value.trim()
-  const resultDiv = document.getElementById("result")
+
+const form = document.getElementById("orderForm");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault(); // Formni refresh qilmasligi uchun
+
+  // Formdagi inputlarni olish
+  const kubi = form.querySelector("input[name='kubi']").value.trim();
+  const ogirlik = form.querySelector("input[name='ogirlik']").value.trim();
+  const ism = form.querySelector("input[name='ism']").value.trim();
+  const telefon = form.querySelector("input[name='telefon']").value.trim();
+
+  const resultDiv = document.getElementById("result");
+  
   try {
-    const response = await fetch("http://localhost:5000/api/track", {
+    const response = await fetch("https://deltawebbackend.onrender.com/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ container }),
-    })
-    const data = await response.json()
-    resultDiv.textContent = data.message || "❌ Ma’lumot topilmadi"
+      body: JSON.stringify({ kubi, ogirlik, ism, telefon })
+    });
+
+    const data = await response.json();
+    resultDiv.textContent = data.message || "❌ Ma’lumot topilmadi";
   } catch (err) {
-    resultDiv.textContent = "❌ Server bilan aloqa bo‘lmadi"
+    resultDiv.textContent = "❌ Server bilan aloqa bo‘lmadi";
   }
-}
+});
+
+
 
 // About section animatsiyasi
 document.addEventListener("DOMContentLoaded", () => {
